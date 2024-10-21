@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="LOneWorld" extends="World" enable="true" strideversion="1">
+<class name="LOneWorld" extends="World" extends-java="World" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -12,9 +12,29 @@
             <javadoc xml:space="preserve">Constructor for objects of class LOneWorld.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
-            <body/>
+            <delegate target="super" params="830,800,1" params-java="830, 800, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
         </constructor>
     </constructors>
-    <methods/>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Player" type-java="Player" name="player" value="new Player()" value-java=" new Player()" enable="true"/>
+                <call expression="addObject(player,226,207)" expression-java="addObject(player, 226, 207)" enable="true"/>
+                <variable type="Pistol" type-java="Pistol" name="pistol" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
+                <call expression="addObject(pistol,263,203)" expression-java="addObject(pistol, 263, 203)" enable="true"/>
+                <call expression="pistol.setLocation(245,204)" expression-java="pistol.setLocation(245, 204)" enable="true"/>
+                <variable type="Pistol" type-java="Pistol" name="pistol2" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
+                <call expression="addObject(pistol2,115,357)" expression-java="addObject(pistol2, 115, 357)" enable="true"/>
+                <variable type="Pistol" type-java="Pistol" name="pistol3" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
+                <call expression="addObject(pistol3,460,550)" expression-java="addObject(pistol3, 460, 550)" enable="true"/>
+            </body>
+        </method>
+    </methods>
 </class>
