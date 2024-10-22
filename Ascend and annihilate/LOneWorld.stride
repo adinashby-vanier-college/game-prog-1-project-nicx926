@@ -27,13 +27,42 @@ That is: create the initial objects and add them to the world.</javadoc>
             <body>
                 <variable type="Player" type-java="Player" name="player" value="new Player()" value-java=" new Player()" enable="true"/>
                 <call expression="addObject(player,226,207)" expression-java="addObject(player, 226, 207)" enable="true"/>
-                <variable type="Pistol" type-java="Pistol" name="pistol" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
-                <call expression="addObject(pistol,263,203)" expression-java="addObject(pistol, 263, 203)" enable="true"/>
-                <call expression="pistol.setLocation(245,204)" expression-java="pistol.setLocation(245, 204)" enable="true"/>
-                <variable type="Pistol" type-java="Pistol" name="pistol2" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
-                <call expression="addObject(pistol2,115,357)" expression-java="addObject(pistol2, 115, 357)" enable="true"/>
-                <variable type="Pistol" type-java="Pistol" name="pistol3" value="new Pistol()" value-java=" new Pistol()" enable="true"/>
-                <call expression="addObject(pistol3,460,550)" expression-java="addObject(pistol3, 460, 550)" enable="true"/>
+                <variable type="Enemy" type-java="Enemy" name="enemy" value="new Enemy()" value-java=" new Enemy()" enable="true"/>
+                <call expression="addObject(enemy,296,299)" expression-java="addObject(enemy, 296, 299)" enable="true"/>
+                <call expression="enemy.setLocation(302,430)" expression-java="enemy.setLocation(302, 430)" enable="true"/>
+                <call expression="enemy.setLocation(208,384)" expression-java="enemy.setLocation(208, 384)" enable="true"/>
+                <call expression="enemy.setLocation(120,547)" expression-java="enemy.setLocation(120, 547)" enable="true"/>
+                <call expression="enemy.setLocation(157,536)" expression-java="enemy.setLocation(157, 536)" enable="true"/>
+                <call expression="enemy.setLocation(131,689)" expression-java="enemy.setLocation(131, 689)" enable="true"/>
+                <call expression="enemy.setLocation(146,371)" expression-java="enemy.setLocation(146, 371)" enable="true"/>
+                <call expression="enemy.setLocation(149,402)" expression-java="enemy.setLocation(149, 402)" enable="true"/>
+                <variable type="deadSecurity" type-java="deadSecurity" name="deadSecurity" value="new deadSecurity()" value-java=" new deadSecurity()" enable="true"/>
+                <call expression="addObject(deadSecurity,529,556)" expression-java="addObject(deadSecurity, 529, 556)" enable="true"/>
+                <call expression="deadSecurity.setLocation(539,542)" expression-java="deadSecurity.setLocation(539, 542)" enable="true"/>
+                <call expression="deadSecurity.setLocation(159,426)" expression-java="deadSecurity.setLocation(159, 426)" enable="true"/>
+                <call expression="deadSecurity.setLocation(160,432)" expression-java="deadSecurity.setLocation(160, 432)" enable="true"/>
+                <call expression="deadSecurity.setLocation(176,437)" expression-java="deadSecurity.setLocation(176, 437)" enable="true"/>
+                <call expression="removeObject(deadSecurity)" expression-java="removeObject(deadSecurity)" enable="true"/>
+                <call expression="addObject(deadSecurity,190,433)" expression-java="addObject(deadSecurity, 190, 433)" enable="true"/>
+                <call expression="deadSecurity.setLocation(139,375)" expression-java="deadSecurity.setLocation(139, 375)" enable="true"/>
+                <call expression="deadSecurity.setLocation(149,365)" expression-java="deadSecurity.setLocation(149, 365)" enable="true"/>
+                <call expression="deadSecurity.setLocation(154,386)" expression-java="deadSecurity.setLocation(154, 386)" enable="true"/>
+                <call expression="deadSecurity.setLocation(189,383)" expression-java="deadSecurity.setLocation(189, 383)" enable="true"/>
+                <call expression="removeObject(deadSecurity)" expression-java="removeObject(deadSecurity)" enable="true"/>
+                <call expression="enemy.setLocation(165,459)" expression-java="enemy.setLocation(165, 459)" enable="true"/>
+                <variable type="worker" type-java="worker" name="worker" value="new worker()" value-java=" new worker()" enable="true"/>
+                <call expression="addObject(worker,440,340)" expression-java="addObject(worker, 440, 340)" enable="true"/>
+                <variable type="worker" type-java="worker" name="worker2" value="new worker()" value-java=" new worker()" enable="true"/>
+                <call expression="addObject(worker2,655,587)" expression-java="addObject(worker2, 655, 587)" enable="true"/>
+                <variable type="worker" type-java="worker" name="worker3" value="new worker()" value-java=" new worker()" enable="true"/>
+                <call expression="addObject(worker3,267,644)" expression-java="addObject(worker3, 267, 644)" enable="true"/>
+                <variable type="Enemy" type-java="Enemy" name="enemy2" value="new Enemy()" value-java=" new Enemy()" enable="true"/>
+                <call expression="addObject(enemy2,349,390)" expression-java="addObject(enemy2, 349, 390)" enable="true"/>
+                <call expression="enemy.setLocation(152,385)" expression-java="enemy.setLocation(152, 385)" enable="true"/>
+                <call expression="enemy2.setLocation(353,377)" expression-java="enemy2.setLocation(353, 377)" enable="true"/>
+                <call expression="worker.setLocation(418,291)" expression-java="worker.setLocation(418, 291)" enable="true"/>
+                <call expression="worker2.setLocation(618,564)" expression-java="worker2.setLocation(618, 564)" enable="true"/>
+                <call expression="worker3.setLocation(376,603)" expression-java="worker3.setLocation(376, 603)" enable="true"/>
             </body>
         </method>
     </methods>
