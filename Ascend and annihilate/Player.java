@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -33,24 +32,37 @@ public class Player extends Actor
     /**
      * 
      */
-    public void move()
-    {
-        if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - 2);
-        }
+    private void move() {
+        int dx = 0;
+        int dy = 0;
+
         if (Greenfoot.isKeyDown("a")) {
-            setLocation(getX() - 2, getY());
-        }
-        if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + 2);
-        }
+            dx = -2;
+        } 
         if (Greenfoot.isKeyDown("d")) {
-            setLocation(getX() + 2, getY());
+            dx = 2;
+        } 
+        if (Greenfoot.isKeyDown("w")) {
+            dy = -2;
+        } 
+        if (Greenfoot.isKeyDown("s")) {
+            dy = 2;
         }
-        if (Greenfoot.isKeyDown("mouse1")) {
-            setLocation(getX() + 2, getY());
+
+        // Store current position
+        int newX = getX() + dx;
+        int newY = getY() + dy;
+
+        // Set the new position temporarily
+        setLocation(newX, newY);
+
+        // Check for collision after moving
+        if (isTouching(Wall.class)) {
+            // If touching a wall, revert back to the original position
+            setLocation(getX() - dx, getY() - dy);
         }
     }
+
 
     /**
      * 

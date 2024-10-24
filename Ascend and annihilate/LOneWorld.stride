@@ -63,6 +63,58 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="worker.setLocation(418,291)" expression-java="worker.setLocation(418, 291)" enable="true"/>
                 <call expression="worker2.setLocation(618,564)" expression-java="worker2.setLocation(618, 564)" enable="true"/>
                 <call expression="worker3.setLocation(376,603)" expression-java="worker3.setLocation(376, 603)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall,74,312)" expression-java="addObject(wall, 74, 312)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall2" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall2,117,312)" expression-java="addObject(wall2, 117, 312)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall3" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall3,142,312)" expression-java="addObject(wall3, 142, 312)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall4" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall4,111,274)" expression-java="addObject(wall4, 111, 274)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall5" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall5,156,273)" expression-java="addObject(wall5, 156, 273)" enable="true"/>
+                <call expression="wall5.setLocation(158,276)" expression-java="wall5.setLocation(158, 276)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall6" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall6,189,273)" expression-java="addObject(wall6, 189, 273)" enable="true"/>
+                <call expression="wall6.setLocation(194,273)" expression-java="wall6.setLocation(194, 273)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall7" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall7,263,312)" expression-java="addObject(wall7, 263, 312)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall8" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall8,302,312)" expression-java="addObject(wall8, 302, 312)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall9" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall9,341,311)" expression-java="addObject(wall9, 341, 311)" enable="true"/>
+                <call expression="wall9.setLocation(348,311)" expression-java="wall9.setLocation(348, 311)" enable="true"/>
+                <call expression="wall5.setLocation(145,275)" expression-java="wall5.setLocation(145, 275)" enable="true"/>
+                <call expression="wall6.setLocation(193,274)" expression-java="wall6.setLocation(193, 274)" enable="true"/>
+                <call expression="wall5.setLocation(157,276)" expression-java="wall5.setLocation(157, 276)" enable="true"/>
+                <call expression="wall9.setLocation(346,314)" expression-java="wall9.setLocation(346, 314)" enable="true"/>
+                <call expression="wall9.setLocation(349,315)" expression-java="wall9.setLocation(349, 315)" enable="true"/>
+                <call expression="wall9.setLocation(345,309)" expression-java="wall9.setLocation(345, 309)" enable="true"/>
+                <call expression="wall9.setLocation(350,308)" expression-java="wall9.setLocation(350, 308)" enable="true"/>
+                <call expression="wall9.setLocation(349,313)" expression-java="wall9.setLocation(349, 313)" enable="true"/>
+                <call expression="wall5.setLocation(150,272)" expression-java="wall5.setLocation(150, 272)" enable="true"/>
+                <call expression="wall4.setLocation(108,268)" expression-java="wall4.setLocation(108, 268)" enable="true"/>
+                <call expression="wall5.setLocation(149,266)" expression-java="wall5.setLocation(149, 266)" enable="true"/>
+                <call expression="wall6.setLocation(192,269)" expression-java="wall6.setLocation(192, 269)" enable="true"/>
+                <call expression="wall3.setLocation(146,315)" expression-java="wall3.setLocation(146, 315)" enable="true"/>
+                <call expression="wall2.setLocation(103,317)" expression-java="wall2.setLocation(103, 317)" enable="true"/>
+                <call expression="wall.setLocation(64,315)" expression-java="wall.setLocation(64, 315)" enable="true"/>
+                <call expression="wall2.setLocation(136,312)" expression-java="wall2.setLocation(136, 312)" enable="true"/>
+                <call expression="wall9.setLocation(340,311)" expression-java="wall9.setLocation(340, 311)" enable="true"/>
+                <call expression="wall7.setLocation(264,318)" expression-java="wall7.setLocation(264, 318)" enable="true"/>
+                <call expression="wall8.setLocation(300,316)" expression-java="wall8.setLocation(300, 316)" enable="true"/>
+                <call expression="wall9.setLocation(352,319)" expression-java="wall9.setLocation(352, 319)" enable="true"/>
+                <call expression="wall5.setLocation(155,265)" expression-java="wall5.setLocation(155, 265)" enable="true"/>
+                <call expression="wall4.setLocation(123,267)" expression-java="wall4.setLocation(123, 267)" enable="true"/>
+                <call expression="removeObject(wall3)" expression-java="removeObject(wall3)" enable="true"/>
+                <call expression="removeObject(wall2)" expression-java="removeObject(wall2)" enable="true"/>
+                <call expression="removeObject(wall)" expression-java="removeObject(wall)" enable="true"/>
+                <call expression="removeObject(wall7)" expression-java="removeObject(wall7)" enable="true"/>
+                <call expression="removeObject(wall8)" expression-java="removeObject(wall8)" enable="true"/>
+                <call expression="removeObject(wall9)" expression-java="removeObject(wall9)" enable="true"/>
+                <call expression="removeObject(wall6)" expression-java="removeObject(wall6)" enable="true"/>
+                <call expression="removeObject(wall5)" expression-java="removeObject(wall5)" enable="true"/>
+                <call expression="removeObject(wall4)" expression-java="removeObject(wall4)" enable="true"/>
             </body>
         </method>
     </methods>
