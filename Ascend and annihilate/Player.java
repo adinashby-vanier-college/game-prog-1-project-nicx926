@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -14,6 +15,7 @@ public class Player extends Actor
     public void act()
     {
         look();
+        die();
         move();
         swing();
     }
@@ -32,37 +34,53 @@ public class Player extends Actor
     /**
      * 
      */
-    private void move() {
-        int dx = 0;
-        int dy = 0;
-
-        if (Greenfoot.isKeyDown("a")) {
-            dx = -2;
-        } 
-        if (Greenfoot.isKeyDown("d")) {
-            dx = 2;
-        } 
-        if (Greenfoot.isKeyDown("w")) {
-            dy = -2;
-        } 
-        if (Greenfoot.isKeyDown("s")) {
-            dy = 2;
-        }
-
-        // Store current position
-        int newX = getX() + dx;
-        int newY = getY() + dy;
-
-        // Set the new position temporarily
-        setLocation(newX, newY);
-
-        // Check for collision after moving
-        if (isTouching(Wall.class)) {
-            // If touching a wall, revert back to the original position
-            setLocation(getX() - dx, getY() - dy);
+    public void checkIfHitByEnemy()
+    {
+        Enemy enemy = (Enemy)getOneIntersectingObject(Enemy.class);
+        if (enemy != null) {
+            die();
         }
     }
 
+    /**
+     * 
+     */
+    public void die()
+    {
+        getWorld().addObject( new  deadPlayer(), getX(), getY());
+        getWorld().removeObject(this);
+    }
+
+    /**
+     * 
+     */
+    private void move()
+    {
+        int dx = 0;
+        int dy = 0;
+        if (Greenfoot.isKeyDown("a")) {
+            dx = -2;
+        }
+        if (Greenfoot.isKeyDown("d")) {
+            dx = 2;
+        }
+        if (Greenfoot.isKeyDown("w")) {
+            dy = -2;
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            dy = 2;
+        }
+        /* Store current position*/
+        int newX = getX() + dx;
+        int newY = getY() + dy;
+        /* Set the new position temporarily*/
+        setLocation(newX, newY);
+        /* Check for collision after moving*/
+        if (isTouching(Wall.class)) {
+            /* If touching a wall, revert back to the original position*/
+            setLocation(getX() - dx, getY() - dy);
+        }
+    }
 
     /**
      * 
