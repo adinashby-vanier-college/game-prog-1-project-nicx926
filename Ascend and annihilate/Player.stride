@@ -15,7 +15,6 @@
             <throws/>
             <body>
                 <call expression="look()" expression-java="look()" enable="true"/>
-                <call expression="die()" expression-java="die()" enable="true"/>
                 <call expression="move()" expression-java="move()" enable="true"/>
                 <call expression="swing()" expression-java="swing()" enable="true"/>
             </body>
@@ -116,8 +115,9 @@
                 <variable type="int" type-java="int" name="direction" value="getRotation()" value-java="getRotation()" enable="true"/>
                 <variable type="List&lt;Actor&gt;" type-java="List&lt;Actor&gt;" name="actorsInRange" value="getObjectsInRange(60,Actor.class)" value-java="getObjectsInRange(60, Actor.class)" enable="true"/>
                 <foreach type="Actor" type-java="Actor" var="actor" collection="actorsInRange" collection-java="actorsInRange" enable="true">
-                    <if condition="actor!=this" condition-java="actor != this" enable="true">
+                    <if condition="actor!=this&amp;&amp;actor&lt;:Enemy" condition-java="actor != this &amp;&amp; actor instanceof Enemy" enable="true">
                         <ifStatements>
+                            <comment xml:space="preserve">Check if the actor is an instance of Enemy</comment>
                             <variable type="int" type-java="int" name="angleToActor" value="(int)Math.toDegrees(Math.atan2(actor.getY()-getY(),actor.getX()-getX()))" value-java="(int)Math.toDegrees(Math.atan2(actor.getY() - getY(), actor.getX() - getX()))" enable="true"/>
                             <variable type="int" type-java="int" name="angleDifference" value="Math.abs((angleToActor-direction+360)%360)" value-java="Math.abs((angleToActor - direction + 360) % 360)" enable="true"/>
                             <if condition="(angleDifference&lt;=40||angleDifference&gt;=(360-20))" condition-java="(angleDifference &lt;= 40 || angleDifference &gt;= (360 - 20))" enable="true">

@@ -36,11 +36,20 @@ public class Enemy extends Actor
     public void moveAround()
     {
         move(1);
+        int dx = 0;
+        int dy = 0;
         if ((Greenfoot.getRandomNumber(10) == 1)) {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
         if (isAtEdge()) {
             turn(180);
+        }
+        int newX = getX() + dx;
+        int newY = getY() + dy;
+        setLocation(newX, newY);
+        if (isTouching(Wall.class)) {
+            /* If touching a wall, revert back to the original position*/
+            setLocation(getX() - dx, getY() - dy);
         }
     }
 

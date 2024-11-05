@@ -39,6 +39,8 @@
             <throws/>
             <body>
                 <call expression="move(1)" expression-java="move(1)" enable="true"/>
+                <variable type="int" type-java="int" name="dx" value="0" value-java="0" enable="true"/>
+                <variable type="int" type-java="int" name="dy" value="0" value-java="0" enable="true"/>
                 <if condition="(Greenfoot.getRandomNumber(10)==1)" condition-java="(Greenfoot.getRandomNumber(10) == 1)" enable="true">
                     <ifStatements>
                         <call expression="turn(Greenfoot.getRandomNumber(90)-45)" expression-java="turn(Greenfoot.getRandomNumber(90) - 45)" enable="true"/>
@@ -47,6 +49,15 @@
                 <if condition="isAtEdge()" condition-java="isAtEdge()" enable="true">
                     <ifStatements>
                         <call expression="turn(180)" expression-java="turn(180)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <variable type="int" type-java="int" name="newX" value="getX()+dx" value-java="getX() + dx" enable="true"/>
+                <variable type="int" type-java="int" name="newY" value="getY()+dy" value-java="getY() + dy" enable="true"/>
+                <call expression="setLocation(newX,newY)" expression-java="setLocation(newX, newY)" enable="true"/>
+                <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
+                    <ifStatements>
+                        <comment xml:space="preserve">If touching a wall, revert back to the original position</comment>
+                        <call expression="setLocation(getX()-dx,getY()-dy)" expression-java="setLocation(getX() - dx, getY() - dy)" enable="true"/>
                     </ifStatements>
                 </if>
             </body>

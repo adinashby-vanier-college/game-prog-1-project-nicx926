@@ -15,7 +15,6 @@ public class Player extends Actor
     public void act()
     {
         look();
-        die();
         move();
         swing();
     }
@@ -100,7 +99,8 @@ public class Player extends Actor
         int direction = getRotation();
         List<Actor> actorsInRange = getObjectsInRange(60, Actor.class);
         for (final Actor actor : actorsInRange) {
-            if (actor != this) {
+            if (actor != this && actor instanceof Enemy) {
+                /* Check if the actor is an instance of Enemy*/
                 int angleToActor = (int)Math.toDegrees(Math.atan2(actor.getY() - getY(), actor.getX() - getX()));
                 int angleDifference = Math.abs((angleToActor - direction + 360) % 360);
                 if ((angleDifference <= 40 || angleDifference >= (360 - 20))) {
