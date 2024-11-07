@@ -115,6 +115,8 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="removeObject(wall6)" expression-java="removeObject(wall6)" enable="true"/>
                 <call expression="removeObject(wall5)" expression-java="removeObject(wall5)" enable="true"/>
                 <call expression="removeObject(wall4)" expression-java="removeObject(wall4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall10" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall10,168,155)" expression-java="addObject(wall10, 168, 155)" enable="true"/>
             </body>
         </method>
     </methods>

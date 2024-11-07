@@ -15,9 +15,13 @@
             <throws/>
             <body>
                 <call expression="move(2)" expression-java="move(2)" enable="true"/>
-                <if condition="isAtEdge()" condition-java="isAtEdge()" enable="true">
+                <if condition="this!=null" condition-java="this != null" enable="true">
                     <ifStatements>
-                        <call expression="getWorld().removeObject(this)" expression-java="getWorld().removeObject(this)" enable="true"/>
+                        <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
+                            <ifStatements>
+                                <call expression="getWorld().removeObject(this)" expression-java="getWorld().removeObject(this)" enable="true"/>
+                            </ifStatements>
+                        </if>
                     </ifStatements>
                 </if>
             </body>
