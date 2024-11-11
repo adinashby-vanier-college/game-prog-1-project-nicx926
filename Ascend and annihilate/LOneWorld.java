@@ -24,9 +24,9 @@ public class LOneWorld extends World
      */
     private void prepare()
     {
-        Player player =  new  Player();
+        Player player =  new Player();
         addObject(player, 226, 207);
-        Enemy enemy =  new  Enemy();
+        Enemy enemy =  new Enemy();
         addObject(enemy, 296, 299);
         enemy.setLocation(302, 430);
         enemy.setLocation(208, 384);
@@ -35,7 +35,7 @@ public class LOneWorld extends World
         enemy.setLocation(131, 689);
         enemy.setLocation(146, 371);
         enemy.setLocation(149, 402);
-        deadSecurity deadSecurity =  new  deadSecurity();
+        deadSecurity deadSecurity =  new deadSecurity();
         addObject(deadSecurity, 529, 556);
         deadSecurity.setLocation(539, 542);
         deadSecurity.setLocation(159, 426);
@@ -49,38 +49,38 @@ public class LOneWorld extends World
         deadSecurity.setLocation(189, 383);
         removeObject(deadSecurity);
         enemy.setLocation(165, 459);
-        worker worker =  new  worker();
+        worker worker =  new worker();
         addObject(worker, 440, 340);
-        worker worker2 =  new  worker();
+        worker worker2 =  new worker();
         addObject(worker2, 655, 587);
-        worker worker3 =  new  worker();
+        worker worker3 =  new worker();
         addObject(worker3, 267, 644);
-        Enemy enemy2 =  new  Enemy();
+        Enemy enemy2 =  new Enemy();
         addObject(enemy2, 349, 390);
         enemy.setLocation(152, 385);
         enemy2.setLocation(353, 377);
         worker.setLocation(418, 291);
         worker2.setLocation(618, 564);
         worker3.setLocation(376, 603);
-        Wall wall =  new  Wall();
+        Wall wall =  new Wall();
         addObject(wall, 74, 312);
-        Wall wall2 =  new  Wall();
+        Wall wall2 =  new Wall();
         addObject(wall2, 117, 312);
-        Wall wall3 =  new  Wall();
+        Wall wall3 =  new Wall();
         addObject(wall3, 142, 312);
-        Wall wall4 =  new  Wall();
+        Wall wall4 =  new Wall();
         addObject(wall4, 111, 274);
-        Wall wall5 =  new  Wall();
+        Wall wall5 =  new Wall();
         addObject(wall5, 156, 273);
         wall5.setLocation(158, 276);
-        Wall wall6 =  new  Wall();
+        Wall wall6 =  new Wall();
         addObject(wall6, 189, 273);
         wall6.setLocation(194, 273);
-        Wall wall7 =  new  Wall();
+        Wall wall7 =  new Wall();
         addObject(wall7, 263, 312);
-        Wall wall8 =  new  Wall();
+        Wall wall8 =  new Wall();
         addObject(wall8, 302, 312);
-        Wall wall9 =  new  Wall();
+        Wall wall9 =  new Wall();
         addObject(wall9, 341, 311);
         wall9.setLocation(348, 311);
         wall5.setLocation(145, 275);
@@ -114,7 +114,7 @@ public class LOneWorld extends World
         removeObject(wall6);
         removeObject(wall5);
         removeObject(wall4);
-        Wall wall10 =  new  Wall();
+        Wall wall10 =  new Wall();
         addObject(wall10, 168, 155);
     }
 }
