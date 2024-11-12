@@ -24,7 +24,7 @@ public class Enemy extends Actor
     {
         move();
         moveAround();
-        lookForPlayer();
+        lookForPlayers();
         manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
@@ -79,13 +79,12 @@ public class Enemy extends Actor
     /**
      * 
      */
-    public void lookForPlayer()
+    public void lookForPlayers()
     {
-        Player player = (Player)getWorld().getObjects(Player.class).get(0);
-        if (player != null && withinRange(player, 200)) {
-            turnTowards(player.getX(), player.getY());
-            shootBullet();
+        Players closestPlayer = (Players)getOneObjectAtOffset(0, 0, Players.class);
+        if (closestPlayer != null && within) {
         }
+        
     }
 
     /**

@@ -6,7 +6,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class Player extends Actor
+public class Player extends Players
 {
 
     /**

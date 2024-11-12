@@ -25,7 +25,7 @@
             <body>
                 <call expression="move()" expression-java="move()" enable="true"/>
                 <call expression="moveAround()" expression-java="moveAround()" enable="true"/>
-                <call expression="lookForPlayer()" expression-java="lookForPlayer()" enable="true"/>
+                <call expression="lookForPlayers()" expression-java="lookForPlayers()" enable="true"/>
                 <call expression="manageCooldown()" expression-java="manageCooldown()" enable="true"/>
                 <if condition="isGameOver()" condition-java="isGameOver()" enable="true">
                     <ifStatements>
@@ -93,18 +93,16 @@
                 </if>
             </body>
         </method>
-        <method access="public" type="void" type-java="void" name="lookForPlayer" enable="true">
+        <method access="public" type="void" type-java="void" name="lookForPlayers" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
             <body>
-                <variable type="Player" type-java="Player" name="player" value="(Player)getWorld().getObjects(Player.class).get(0)" value-java="(Player)getWorld().getObjects(Player.class).get(0)" enable="true"/>
-                <if condition="player!=null&amp;&amp;withinRange(player,200)" condition-java="player != null &amp;&amp; withinRange(player, 200)" enable="true">
-                    <ifStatements>
-                        <call expression="turnTowards(player.getX(),player.getY())" expression-java="turnTowards(player.getX(), player.getY())" enable="true"/>
-                        <call expression="shootBullet()" expression-java="shootBullet()" enable="true"/>
-                    </ifStatements>
+                <variable type="Players" type-java="Players" name="closestPlayer" value="(Players)getOneObjectAtOffset(0,0,Players.class)" value-java="(Players)getOneObjectAtOffset(0, 0, Players.class)" enable="true"/>
+                <if condition="closestPlayer!=null&amp;&amp;within" condition-java="closestPlayer != null &amp;&amp; within" enable="true">
+                    <ifStatements/>
                 </if>
+                <blank/>
             </body>
         </method>
         <method access="public" type="boolean" type-java="boolean" name="withinRange" enable="true">

@@ -25,8 +25,8 @@ That is: create the initial objects and add them to the world.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="Player" type-java="Player" name="player" value="new Player()" value-java=" new Player()" enable="true"/>
-                <call expression="addObject(player,226,207)" expression-java="addObject(player, 226, 207)" enable="true"/>
+                <variable type="Player" type-java="Player" name="playerBat" value="new Player()" value-java=" new Player()" enable="true"/>
+                <call expression="addObject(playerBat,226,207)" expression-java="addObject(playerBat, 226, 207)" enable="true"/>
                 <variable type="Enemy" type-java="Enemy" name="enemy" value="new Enemy()" value-java=" new Enemy()" enable="true"/>
                 <call expression="addObject(enemy,296,299)" expression-java="addObject(enemy, 296, 299)" enable="true"/>
                 <call expression="enemy.setLocation(302,430)" expression-java="enemy.setLocation(302, 430)" enable="true"/>
@@ -50,11 +50,11 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="deadSecurity.setLocation(189,383)" expression-java="deadSecurity.setLocation(189, 383)" enable="true"/>
                 <call expression="removeObject(deadSecurity)" expression-java="removeObject(deadSecurity)" enable="true"/>
                 <call expression="enemy.setLocation(165,459)" expression-java="enemy.setLocation(165, 459)" enable="true"/>
-                <variable type="worker" type-java="worker" name="worker" value="new worker()" value-java=" new worker()" enable="true"/>
+                <variable type="Worker" type-java="Worker" name="worker" value="new Worker()" value-java=" new Worker()" enable="true"/>
                 <call expression="addObject(worker,440,340)" expression-java="addObject(worker, 440, 340)" enable="true"/>
-                <variable type="worker" type-java="worker" name="worker2" value="new worker()" value-java=" new worker()" enable="true"/>
+                <variable type="Worker" type-java="Worker" name="worker2" value="new Worker()" value-java=" new Worker()" enable="true"/>
                 <call expression="addObject(worker2,655,587)" expression-java="addObject(worker2, 655, 587)" enable="true"/>
-                <variable type="worker" type-java="worker" name="worker3" value="new worker()" value-java=" new worker()" enable="true"/>
+                <variable type="Worker" type-java="Worker" name="worker3" value="new Worker()" value-java=" new Worker()" enable="true"/>
                 <call expression="addObject(worker3,267,644)" expression-java="addObject(worker3, 267, 644)" enable="true"/>
                 <variable type="Enemy" type-java="Enemy" name="enemy2" value="new Enemy()" value-java=" new Enemy()" enable="true"/>
                 <call expression="addObject(enemy2,349,390)" expression-java="addObject(enemy2, 349, 390)" enable="true"/>
@@ -117,6 +117,12 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="removeObject(wall4)" expression-java="removeObject(wall4)" enable="true"/>
                 <variable type="Wall" type-java="Wall" name="wall10" value="new Wall()" value-java=" new Wall()" enable="true"/>
                 <call expression="addObject(wall10,168,155)" expression-java="addObject(wall10, 168, 155)" enable="true"/>
+                <call expression="playerBat.setLocation(220,201)" expression-java="playerBat.setLocation(220, 201)" enable="true"/>
+                <call expression="playerBat.setLocation(233,198)" expression-java="playerBat.setLocation(233, 198)" enable="true"/>
+                <call expression="playerBat.setLocation(224,198)" expression-java="playerBat.setLocation(224, 198)" enable="true"/>
+                <call expression="removeObject(playerBat)" expression-java="removeObject(playerBat)" enable="true"/>
+                <variable type="PlayerBat" type-java="PlayerBat" name="player" value="new PlayerBat()" value-java=" new PlayerBat()" enable="true"/>
+                <call expression="addObject(playerBat,236,206)" expression-java="addObject(playerBat, 236, 206)" enable="true"/>
             </body>
         </method>
     </methods>
