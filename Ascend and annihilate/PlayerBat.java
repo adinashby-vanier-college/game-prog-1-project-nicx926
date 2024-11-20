@@ -46,7 +46,7 @@ public class PlayerBat extends Players
      */
     public void die()
     {
-        getWorld().addObject( new  deadPlayer(), getX(), getY());
+        getWorld().addObject( new deadPlayer(), getX(), getY());
         getWorld().removeObject(this);
     }
 

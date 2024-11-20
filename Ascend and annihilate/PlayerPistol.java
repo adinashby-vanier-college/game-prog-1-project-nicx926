@@ -14,5 +14,45 @@ public class PlayerPistol extends Players
      */
     public void act()
     {
+        look();
+        move();
+    }
+
+    /**
+     * 
+     */
+    public void look()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null) {
+            turnTowards(mouse.getX(), mouse.getY());
+        }
+    }
+
+    /**
+     * 
+     */
+    public void move()
+    {
+        int dx = 0;
+        int dy = 0;
+        if (Greenfoot.isKeyDown("a")) {
+            dx = -2;
+        }
+        if (Greenfoot.isKeyDown("d")) {
+            dx = 2;
+        }
+        if (Greenfoot.isKeyDown("w")) {
+            dy = -2;
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            dy = 2;
+        }
+        int newX = getX() + dx;
+        int newY = getY() + dy;
+        setLocation(newX, newY);
+        if (isTouching(Wall.class)) {
+            setLocation(getX() - dx, getY() - dy);
+        }
     }
 }

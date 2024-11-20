@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -81,10 +80,11 @@ public class Enemy extends Actor
      */
     public void lookForPlayers()
     {
-        Players closestPlayer = (Players)getOneObjectAtOffset(0, 0, Players.class);
-        if (closestPlayer != null && within) {
+        Player player = (Player) getWorld().getObjects(Players.class).get(0);
+        if(player != null && withinRange(player,200)){
+            turnTowards(player.getX(),player.getY());
+            shootBullet();
         }
-        
     }
 
     /**
