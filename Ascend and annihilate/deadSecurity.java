@@ -6,7 +6,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class deadSecurity extends Actor
+public class deadSecurity extends DeadBody
 {
 
     /**

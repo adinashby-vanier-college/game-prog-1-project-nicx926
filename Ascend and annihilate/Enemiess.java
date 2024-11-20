@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,7 +7,8 @@ import greenfoot.*;
  */
 public class Enemiess extends Characters
 {
-
+    public int shotsFired = 0;
+    public int maxShots = 5;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -18,15 +18,41 @@ public class Enemiess extends Characters
         moveAround();
         lookForPlayers();
         manageCooldown();
+        shootAtPlayer();
+        CheckIfDead();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
     }
-
+    public void shootAtPlayer()
+    {
+        Playerss target = (Playerss) getWorld().getObjects(Playerss.class).get(0);
+        if (target != null && canShoot()){
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet,getX(),getY());
+            bullet.setRotation(getRotation());
+            shotsFired++;
+        }
+    }
+    public boolean canShoot()
+    {
+        return true;
+    }
+    public void CheckIfDead()
+    {
+        if (shotsFired >= maxShots){
+            die();
+        }
+    }
+    public void die()
+    {
+        getWorld().removeObject(this);
+        getWorld().addObject(new deadPlayer(),getX(),getY());
+    }
     /**
      * 
      */
-    private void move()
+    public void move()
     {
         int dx = 0;
         int dy = 0;

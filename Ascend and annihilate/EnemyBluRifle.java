@@ -14,5 +14,12 @@ public class EnemyBluRifle extends Enemiess
      */
     public void act()
     {
+        move();
+        moveAround();
+        lookForPlayers();
+        manageCooldown();
+        if (isGameOver()) {
+            transitionToGameOverWorld();
+        }
     }
 }

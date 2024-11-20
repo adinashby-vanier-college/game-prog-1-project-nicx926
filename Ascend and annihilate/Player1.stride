@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="Player" extends="Players" extends-java="Players" enable="true" strideversion="1">
+<class name="Player1" extends="Playerss" extends-java="Playerss" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -14,22 +14,9 @@
             <params/>
             <throws/>
             <body>
+                <call expression="swing()" expression-java="swing()" enable="true"/>
                 <call expression="look()" expression-java="look()" enable="true"/>
                 <call expression="move()" expression-java="move()" enable="true"/>
-                <call expression="swing()" expression-java="swing()" enable="true"/>
-            </body>
-        </method>
-        <method access="public" type="void" type-java="void" name="look" enable="true">
-            <javadoc xml:space="preserve">Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
-            <params/>
-            <throws/>
-            <body>
-                <variable type="MouseInfo" type-java="MouseInfo" name="mouse" value="Greenfoot.getMouseInfo()" value-java="Greenfoot.getMouseInfo()" enable="true"/>
-                <if condition="mouse!=null" condition-java="mouse != null" enable="true">
-                    <ifStatements>
-                        <call expression="turnTowards(mouse.getX(),mouse.getY())" expression-java="turnTowards(mouse.getX(), mouse.getY())" enable="true"/>
-                    </ifStatements>
-                </if>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="checkIfHitByEnemy" enable="true">
@@ -37,7 +24,7 @@
             <params/>
             <throws/>
             <body>
-                <variable type="Enemy" type-java="Enemy" name="enemy" value="(Enemy)getOneIntersectingObject(Enemy.class)" value-java="(Enemy)getOneIntersectingObject(Enemy.class)" enable="true"/>
+                <variable type="Enemiess" type-java="Enemiess" name="enemy" value="(Enemiess)getOneIntersectingObject(Enemiess.class)" value-java="(Enemiess)getOneIntersectingObject(Enemiess.class)" enable="true"/>
                 <if condition="enemy!=null" condition-java="enemy != null" enable="true">
                     <ifStatements>
                         <call expression="die()" expression-java="die()" enable="true"/>
@@ -52,47 +39,6 @@
             <body>
                 <call expression="getWorld().addObject(new deadPlayer(),getX(),getY())" expression-java="getWorld().addObject( new deadPlayer(), getX(), getY())" enable="true"/>
                 <call expression="getWorld().removeObject(this)" expression-java="getWorld().removeObject(this)" enable="true"/>
-            </body>
-        </method>
-        <method access="private" type="void" type-java="void" name="move" enable="true">
-            <javadoc xml:space="preserve"/>
-            <params/>
-            <throws/>
-            <body>
-                <variable type="int" type-java="int" name="dx" value="0" value-java="0" enable="true"/>
-                <variable type="int" type-java="int" name="dy" value="0" value-java="0" enable="true"/>
-                <if condition="Greenfoot.isKeyDown(&quot;a&quot;)" condition-java="Greenfoot.isKeyDown(&quot;a&quot;)" enable="true">
-                    <ifStatements>
-                        <assign dest="dx" dest-java="dx" src="-2" src-java="-2" enable="true"/>
-                    </ifStatements>
-                </if>
-                <if condition="Greenfoot.isKeyDown(&quot;d&quot;)" condition-java="Greenfoot.isKeyDown(&quot;d&quot;)" enable="true">
-                    <ifStatements>
-                        <assign dest="dx" dest-java="dx" src="2" src-java="2" enable="true"/>
-                    </ifStatements>
-                </if>
-                <if condition="Greenfoot.isKeyDown(&quot;w&quot;)" condition-java="Greenfoot.isKeyDown(&quot;w&quot;)" enable="true">
-                    <ifStatements>
-                        <assign dest="dy" dest-java="dy" src="-2" src-java="-2" enable="true"/>
-                    </ifStatements>
-                </if>
-                <if condition="Greenfoot.isKeyDown(&quot;s&quot;)" condition-java="Greenfoot.isKeyDown(&quot;s&quot;)" enable="true">
-                    <ifStatements>
-                        <assign dest="dy" dest-java="dy" src="2" src-java="2" enable="true"/>
-                    </ifStatements>
-                </if>
-                <comment xml:space="preserve">Store current position</comment>
-                <variable type="int" type-java="int" name="newX" value="getX()+dx" value-java="getX() + dx" enable="true"/>
-                <variable type="int" type-java="int" name="newY" value="getY()+dy" value-java="getY() + dy" enable="true"/>
-                <comment xml:space="preserve">Set the new position temporarily</comment>
-                <call expression="setLocation(newX,newY)" expression-java="setLocation(newX, newY)" enable="true"/>
-                <comment xml:space="preserve">Check for collision after moving</comment>
-                <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
-                    <ifStatements>
-                        <comment xml:space="preserve">If touching a wall, revert back to the original position</comment>
-                        <call expression="setLocation(getX()-dx,getY()-dy)" expression-java="setLocation(getX() - dx, getY() - dy)" enable="true"/>
-                    </ifStatements>
-                </if>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="swing" enable="true">
@@ -115,7 +61,7 @@
                 <variable type="int" type-java="int" name="direction" value="getRotation()" value-java="getRotation()" enable="true"/>
                 <variable type="List&lt;Actor&gt;" type-java="List&lt;Actor&gt;" name="actorsInRange" value="getObjectsInRange(60,Actor.class)" value-java="getObjectsInRange(60, Actor.class)" enable="true"/>
                 <foreach type="Actor" type-java="Actor" var="actor" collection="actorsInRange" collection-java="actorsInRange" enable="true">
-                    <if condition="actor!=this&amp;&amp;actor&lt;:Enemy" condition-java="actor != this &amp;&amp; actor instanceof Enemy" enable="true">
+                    <if condition="actor!=this&amp;&amp;actor&lt;:Enemiess" condition-java="actor != this &amp;&amp; actor instanceof Enemiess" enable="true">
                         <ifStatements>
                             <comment xml:space="preserve">Check if the actor is an instance of Enemy</comment>
                             <variable type="int" type-java="int" name="angleToActor" value="(int)Math.toDegrees(Math.atan2(actor.getY()-getY(),actor.getX()-getX()))" value-java="(int)Math.toDegrees(Math.atan2(actor.getY() - getY(), actor.getX() - getX()))" enable="true"/>

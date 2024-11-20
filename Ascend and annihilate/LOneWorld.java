@@ -249,5 +249,20 @@ public class LOneWorld extends World
         Wall wall76 =  new Wall();
         addObject(wall76, 769, 704);
         wall66.setLocation(59, 610);
+        EnemyBluPistol enemyBluPistol =  new EnemyBluPistol();
+        addObject(enemyBluPistol, 296, 412);
+        enemyBluPistol.setLocation(143, 377);
+        Player1 player1 =  new Player1();
+        addObject(player1, 127, 136);
+        EnemyWhitePistol enemyWhitePistol =  new EnemyWhitePistol();
+        addObject(enemyWhitePistol, 345, 371);
+        EnemyWhitePistol enemyWhitePistol2 =  new EnemyWhitePistol();
+        addObject(enemyWhitePistol2, 248, 711);
+        EnemyBluPistol enemyBluPistol2 =  new EnemyBluPistol();
+        addObject(enemyBluPistol2, 567, 387);
+        EnemyWhitePistol enemyWhitePistol3 =  new EnemyWhitePistol();
+        addObject(enemyWhitePistol3, 624, 575);
+        EnemyBluPistol enemyBluPistol3 =  new EnemyBluPistol();
+        addObject(enemyBluPistol3, 512, 589);
     }
 }

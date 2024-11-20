@@ -14,5 +14,12 @@ public class EnemyWhiteRifle extends Enemiess
      */
     public void act()
     {
+        manageCooldown();
+        moveAround();
+        move();
+        lookForPlayers();
+        if (isGameOver()) {
+            transitionToGameOverWorld();
+        }
     }
 }

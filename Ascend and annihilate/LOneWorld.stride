@@ -250,6 +250,21 @@
                 <variable type="Wall" type-java="Wall" name="wall76" value="new Wall()" value-java=" new Wall()" enable="true"/>
                 <call expression="addObject(wall76,769,704)" expression-java="addObject(wall76, 769, 704)" enable="true"/>
                 <call expression="wall66.setLocation(59,610)" expression-java="wall66.setLocation(59, 610)" enable="true"/>
+                <variable type="EnemyBluPistol" type-java="EnemyBluPistol" name="enemyBluPistol" value="new EnemyBluPistol()" value-java=" new EnemyBluPistol()" enable="true"/>
+                <call expression="addObject(enemyBluPistol,296,412)" expression-java="addObject(enemyBluPistol, 296, 412)" enable="true"/>
+                <call expression="enemyBluPistol.setLocation(143,377)" expression-java="enemyBluPistol.setLocation(143, 377)" enable="true"/>
+                <variable type="Player1" type-java="Player1" name="player1" value="new Player1()" value-java=" new Player1()" enable="true"/>
+                <call expression="addObject(player1,127,136)" expression-java="addObject(player1, 127, 136)" enable="true"/>
+                <variable type="EnemyWhitePistol" type-java="EnemyWhitePistol" name="enemyWhitePistol" value="new EnemyWhitePistol()" value-java=" new EnemyWhitePistol()" enable="true"/>
+                <call expression="addObject(enemyWhitePistol,345,371)" expression-java="addObject(enemyWhitePistol, 345, 371)" enable="true"/>
+                <variable type="EnemyWhitePistol" type-java="EnemyWhitePistol" name="enemyWhitePistol2" value="new EnemyWhitePistol()" value-java=" new EnemyWhitePistol()" enable="true"/>
+                <call expression="addObject(enemyWhitePistol2,248,711)" expression-java="addObject(enemyWhitePistol2, 248, 711)" enable="true"/>
+                <variable type="EnemyBluPistol" type-java="EnemyBluPistol" name="enemyBluPistol2" value="new EnemyBluPistol()" value-java=" new EnemyBluPistol()" enable="true"/>
+                <call expression="addObject(enemyBluPistol2,567,387)" expression-java="addObject(enemyBluPistol2, 567, 387)" enable="true"/>
+                <variable type="EnemyWhitePistol" type-java="EnemyWhitePistol" name="enemyWhitePistol3" value="new EnemyWhitePistol()" value-java=" new EnemyWhitePistol()" enable="true"/>
+                <call expression="addObject(enemyWhitePistol3,624,575)" expression-java="addObject(enemyWhitePistol3, 624, 575)" enable="true"/>
+                <variable type="EnemyBluPistol" type-java="EnemyBluPistol" name="enemyBluPistol3" value="new EnemyBluPistol()" value-java=" new EnemyBluPistol()" enable="true"/>
+                <call expression="addObject(enemyBluPistol3,512,589)" expression-java="addObject(enemyBluPistol3, 512, 589)" enable="true"/>
             </body>
         </method>
     </methods>

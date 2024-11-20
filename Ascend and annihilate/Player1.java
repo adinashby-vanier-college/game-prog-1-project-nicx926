@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -62,6 +63,7 @@ public class Player1 extends Playerss
                 int angleDifference = Math.abs((angleToActor - direction + 360) % 360);
                 if ((angleDifference <= 40 || angleDifference >= (360 - 20))) {
                     getWorld().removeObject(actor);
+                    getWorld().addObject( new  deadSecurity(), getX(), getY());
                 }
             }
         }

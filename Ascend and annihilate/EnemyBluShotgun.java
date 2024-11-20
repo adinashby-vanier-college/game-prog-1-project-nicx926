@@ -14,6 +14,7 @@ public class EnemyBluShotgun extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
         lookForPlayers();
         manageCooldown();

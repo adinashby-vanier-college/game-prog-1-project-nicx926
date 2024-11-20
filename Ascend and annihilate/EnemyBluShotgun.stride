@@ -14,6 +14,7 @@
             <params/>
             <throws/>
             <body>
+                <call expression="move()" expression-java="move()" enable="true"/>
                 <call expression="moveAround()" expression-java="moveAround()" enable="true"/>
                 <call expression="lookForPlayers()" expression-java="lookForPlayers()" enable="true"/>
                 <call expression="manageCooldown()" expression-java="manageCooldown()" enable="true"/>

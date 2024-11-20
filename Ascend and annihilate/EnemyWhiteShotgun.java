@@ -14,5 +14,12 @@ public class EnemyWhiteShotgun extends Enemiess
      */
     public void act()
     {
+        move();
+        moveAround();
+        manageCooldown();
+        lookForPlayers();
+        if (isGameOver()) {
+            transitionToGameOverWorld();
+        }
     }
 }

@@ -13,7 +13,17 @@
             <javadoc xml:space="preserve">Act - do whatever the EnemyWhiteShotgun wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
-            <body/>
+            <body>
+                <call expression="move()" expression-java="move()" enable="true"/>
+                <call expression="moveAround()" expression-java="moveAround()" enable="true"/>
+                <call expression="manageCooldown()" expression-java="manageCooldown()" enable="true"/>
+                <call expression="lookForPlayers()" expression-java="lookForPlayers()" enable="true"/>
+                <if condition="isGameOver()" condition-java="isGameOver()" enable="true">
+                    <ifStatements>
+                        <call expression="transitionToGameOverWorld()" expression-java="transitionToGameOverWorld()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
         </method>
     </methods>
 </class>
