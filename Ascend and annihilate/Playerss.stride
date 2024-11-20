@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Playerss" extends="Characters" extends-java="Characters" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Playerss wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="look()" expression-java="look()" enable="true"/>
+                <call expression="move()" expression-java="move()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="move" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="dx" value="0" value-java="0" enable="true"/>
+                <variable type="int" type-java="int" name="dy" value="0" value-java="0" enable="true"/>
+                <if condition="Greenfoot.isKeyDown(&quot;a&quot;)" condition-java="Greenfoot.isKeyDown(&quot;a&quot;)" enable="true">
+                    <ifStatements>
+                        <assign dest="dx" dest-java="dx" src="-2" src-java="-2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;d&quot;)" condition-java="Greenfoot.isKeyDown(&quot;d&quot;)" enable="true">
+                    <ifStatements>
+                        <assign dest="dx" dest-java="dx" src="2" src-java="2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;w&quot;)" condition-java="Greenfoot.isKeyDown(&quot;w&quot;)" enable="true">
+                    <ifStatements>
+                        <assign dest="dy" dest-java="dy" src="-2" src-java="-2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;s&quot;)" condition-java="Greenfoot.isKeyDown(&quot;s&quot;)" enable="true">
+                    <ifStatements>
+                        <assign dest="dy" dest-java="dy" src="2" src-java="2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <comment xml:space="preserve">Store current position</comment>
+                <variable type="int" type-java="int" name="newX" value="getX()+dx" value-java="getX() + dx" enable="true"/>
+                <variable type="int" type-java="int" name="newY" value="getY()+dy" value-java="getY() + dy" enable="true"/>
+                <comment xml:space="preserve">Set the new position temporarily</comment>
+                <call expression="setLocation(newX,newY)" expression-java="setLocation(newX, newY)" enable="true"/>
+                <comment xml:space="preserve">Check for collision after moving</comment>
+                <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
+                    <ifStatements>
+                        <comment xml:space="preserve">If touching a wall, revert back to the original position</comment>
+                        <call expression="setLocation(getX()-dx,getY()-dy)" expression-java="setLocation(getX() - dx, getY() - dy)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="look" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="MouseInfo" type-java="MouseInfo" name="mouse" value="Greenfoot.getMouseInfo()" value-java="Greenfoot.getMouseInfo()" enable="true"/>
+                <if condition="mouse!=null" condition-java="mouse != null" enable="true">
+                    <ifStatements>
+                        <call expression="turnTowards(mouse.getX(),mouse.getY())" expression-java="turnTowards(mouse.getX(), mouse.getY())" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>
