@@ -123,6 +123,7 @@
                             <if condition="(angleDifference&lt;=40||angleDifference&gt;=(360-20))" condition-java="(angleDifference &lt;= 40 || angleDifference &gt;= (360 - 20))" enable="true">
                                 <ifStatements>
                                     <call expression="getWorld().removeObject(actor)" expression-java="getWorld().removeObject(actor)" enable="true"/>
+                                    <call expression="getWorld().addObject(new deadSecurity(),getX(),getY())" expression-java="getWorld().addObject( new deadSecurity(), getX(), getY())" enable="true"/>
                                 </ifStatements>
                             </if>
                         </ifStatements>

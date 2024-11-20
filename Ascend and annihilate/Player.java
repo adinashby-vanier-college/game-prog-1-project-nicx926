@@ -105,6 +105,7 @@ public class Player extends Players
                 int angleDifference = Math.abs((angleToActor - direction + 360) % 360);
                 if ((angleDifference <= 40 || angleDifference >= (360 - 20))) {
                     getWorld().removeObject(actor);
+                    getWorld().addObject( new  deadSecurity(), getX(), getY());
                 }
             }
         }
