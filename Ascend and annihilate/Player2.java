@@ -3,7 +3,7 @@ import java.util.*;
 import greenfoot.*;
 
 /**
- * 
+ *
  */
 public class Player2 extends Playerss
 {
@@ -22,19 +22,21 @@ public class Player2 extends Playerss
         {
             if (ammoCount > 0)
             {
-                fireShot();  // Fire a shot if ammo is available
+                fireShot();
+                Greenfoot.playSound("pistol.mp3");// Fire a shot if ammo is available
             }
             else
             {
-                reload();  // Reload if no ammo left
+                reload();
+                Greenfoot.playSound("reload.mp3");// Reload if no ammo left
             }
         }
-        
+       
         if (reloading && (System.currentTimeMillis() - reloadStartTime >= 3000))
         {
             completeReload();  // Complete reload after 3 seconds
         }
-        
+       
         // You could add additional player movement or actions here if needed.
     }
     private void fireShot()
@@ -48,7 +50,7 @@ public class Player2 extends Playerss
     {
         reloading = true;
         reloadStartTime = System.currentTimeMillis();  // Record the start time of reloading
-        System.out.println("Reloading...");
+        
     }
 
     // Completes the reload and refills the ammo
@@ -56,6 +58,6 @@ public class Player2 extends Playerss
     {
         ammoCount = 6;  // Refills the revolver with 6 shots
         reloading = false;
-        System.out.println("Reload complete! Ammo refilled to: " + ammoCount);
+        
     }
 }

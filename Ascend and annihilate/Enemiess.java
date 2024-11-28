@@ -14,6 +14,22 @@ public class Enemiess extends Characters
     int shootCooldown = 0;
     int reloadTime = 100;
     int burstShotsLeft = 3;
+    
+    public Enemiess(){
+        GreenfootImage image = getImage();
+        // Define your scaling factor (e.g., 1.5 means 150% of the original size)
+        double scaleFactor = 0.9;
+        
+        // Calculate new width and height using the scale factor
+        int newWidth = (int)(image.getWidth() * scaleFactor);
+        int newHeight = (int)(image.getHeight() * scaleFactor);
+        
+        // Scale the image to the new dimensions
+        image.scale(newWidth, newHeight);
+        
+        // Set the scaled image
+        setImage(image);
+    }
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -49,29 +65,31 @@ public class Enemiess extends Characters
      */
     public void move()
     {
-        int dx = 0;
-        int dy = 0;
-        if (isTouching(Wall.class)) {
-            dx = -2;
-        }
-        if (isTouching(Wall.class)) {
-            dx = 2;
-        }
-        if (isTouching(Wall.class)) {
-            dy = -2;
-        }
-        if (isTouching(Wall.class)) {
-            dy = 2;
-        }
+        //int dx = 0;
+        //int dy = 0;
+        //if (isTouching(Wall.class)) {
+            //dx = -2;
+        //}
+        //if (isTouching(Wall.class)) {
+            //dx = 2;
+        //}
+        //if (isTouching(Wall.class)) {
+            //dy = -2;
+        //}
+        //if (isTouching(Wall.class)) {
+            //dy = 2;
+        //}
         /* Store current position*/
-        int newX = getX() + dx;
-        int newY = getY() + dy;
+        // newX = getX() + dx;
+        //int newY = getY() + dy;
         /* Set the new position temporarily*/
-        setLocation(newX, newY);
+        //setLocation(newX, newY);
         /* Check for collision after moving*/
         if (isTouching(Wall.class)) {
             /* If touching a wall, revert back to the original position*/
-            setLocation(getX() - dx, getY() - dy);
+            //setLocation(getX() - dx, getY() - dy);
+            move(-1);
+            turn(180);
         }
     }
 
@@ -97,7 +115,7 @@ public class Enemiess extends Characters
         List<Playerss> players = getWorld().getObjects(Playerss.class);
         if (!players.isEmpty()) {
         Playerss target = players.get(0); // Assume single player
-        if (withinRange(target, 200)) {
+        if (withinRange(target, 100)) {
             turnTowards(target.getX(), target.getY());
             shootBullet();
         }

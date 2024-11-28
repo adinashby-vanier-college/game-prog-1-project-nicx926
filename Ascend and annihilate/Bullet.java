@@ -33,21 +33,11 @@ public class Bullet extends Actor
     }
     public void remove()
     {
-        if(getX() >= getWorld().getWidth()-1)
+        
+        if (isTouching(Wall.class) || isAtEdge())
         {
             getWorld().removeObject(this);
         }
-        else if (getX()<1)
-        {
-            getWorld().removeObject(this);
-        }
-        else if (getY() >= getWorld().getHeight()-1)
-        {
-            getWorld().removeObject(this);
-        }
-        else if (getY()<1)
-        {
-            getWorld().removeObject(this);
-        }
+    
     }
 }
