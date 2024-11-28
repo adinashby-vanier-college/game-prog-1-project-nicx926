@@ -3,14 +3,23 @@ import java.util.*;
 import greenfoot.*;
 
 /**
- *
+ * 
  */
 public class Player2 extends Playerss
 {
-    private int ammoCount = 6;  // 6 shots available initially
-    private boolean reloading = false;  // Flag to check if it's reloading
-    private long reloadStartTime;  // Stores the time when reloading starts
     public int survivorRotation;
+    private int ammoCount;  // 6 shots available initially
+    private int maxAmmo;// Flag to check if it's reloading
+    private int reloadCooldown;
+    private int reloadTimer;  // Stores the time when reloading starts
+    
+    public Player2()
+    {
+        maxAmmo = 6;
+        ammoCount = maxAmmo;
+        reloadCooldown = 100;
+        reloadTimer = 5;
+    }
     /**
      * Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -18,46 +27,47 @@ public class Player2 extends Playerss
     {
         look();
         move();
-         if (Greenfoot.mouseClicked(null) && !reloading)
-        {
-            if (ammoCount > 0)
-            {
-                fireShot();
-                Greenfoot.playSound("pistol.mp3");// Fire a shot if ammo is available
-            }
-            else
-            {
-                reload();
-                Greenfoot.playSound("reload.mp3");// Reload if no ammo left
-            }
-        }
-       
-        if (reloading && (System.currentTimeMillis() - reloadStartTime >= 3000))
-        {
-            completeReload();  // Complete reload after 3 seconds
-        }
-       
-        // You could add additional player movement or actions here if needed.
+        shoot();
+        reload();
+        survivorRotation = getRotation();
     }
-    private void fireShot()
+    public void shoot()
     {
-        ammoCount--;
-        getWorld().addObject(new Bullet(survivorRotation), getX(), getY());  // Adds a bullet to the world at the player2's position      
+        if(ammoCount > 0 && reloadTimer == 0){
+            if(Greenfoot.getMouseInfo() != null && Greenfoot.getMouseInfo().getButton()==1)
+            {
+                Bullet bullet = new Bullet (survivorRotation);
+                getWorld().addObject(bullet,getX(),getY());
+                ammoCount--;
+                Greenfoot.playSound("pistol.mp3");
+            }
+        }
     }
 
     // Starts the reloading process
-    private void reload()
+    public void reload()
     {
-        reloading = true;
-        reloadStartTime = System.currentTimeMillis();  // Record the start time of reloading
-        
+        if (ammoCount == 0 && reloadTimer == 0) {
+            reloadTimer = reloadCooldown;
+            Greenfoot.playSound("reload.mp3");
+        }
+
+        // Manage reload timer
+        if (reloadTimer > 0) {
+            reloadTimer--;
+            if (reloadTimer == 0) {
+                ammoCount = maxAmmo; // Reset ammo after reload
+            }
+        }
     }
 
     // Completes the reload and refills the ammo
-    private void completeReload()
+    public void displayAmmo()
     {
-        ammoCount = 6;  // Refills the revolver with 6 shots
-        reloading = false;
-        
+        getWorld().showText("Ammo: " + ammoCount + "/" + maxAmmo, 100, 50); // Display ammo count
+        if (reloadTimer > 0) {
+            getWorld().showText("Reloading...", 100, 70); // Show reloading message
+        }
     }
 }
+

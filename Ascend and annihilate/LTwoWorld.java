@@ -14,6 +14,19 @@ public class LTwoWorld extends World
      */
     public LTwoWorld()
     {
-        super(600, 400, 1);
+        super(1252, 698, 1);
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Player3 player3 =  new Player3();
+        addObject(player3, 159, 626);
+        Elevator2To3 elevator2To3 =  new Elevator2To3();
+        addObject(elevator2To3, 930, 345);
     }
 }

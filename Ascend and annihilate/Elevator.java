@@ -24,22 +24,17 @@ public class Elevator extends Actor
      */
     public void act()
     {
-        Player1 player = (Player1) getOneIntersectingObject(Player1.class);
+    }
+    
+    public void levelTransition(World nextWorld){
+        Player2 player = (Player2) getOneIntersectingObject(Player2.class);
         
         if(!transitioning && player != null){
             transitioning = true; //prevent multiple triggers
             
             //creating a transition actor for fading
-            /*these 5 lines of code aligns the position of player and elevator
-            of level 1 to level 2*/
             World currentWorld = getWorld();
-            //int playerX = player.getX();
-            //int playerY = player.getY();
-            //int elevatorX = getX();
-            //int elevatorY = getY();
-            
-        
-            LTwoWorld nextWorld = new LTwoWorld(); 
+             
             TransitionEffect transition = new TransitionEffect(currentWorld.getWidth(), currentWorld.getHeight(),nextWorld);
             //add the TransitionActor to the center of the screen
             currentWorld.addObject(transition, currentWorld.getWidth() / 2, currentWorld.getHeight() / 2);

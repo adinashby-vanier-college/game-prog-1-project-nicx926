@@ -12,9 +12,22 @@
             <javadoc xml:space="preserve">Constructor for objects of class BossWorld.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
-            <body/>
+            <delegate target="super" params="1036,848,1" params-java="1036, 848, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
         </constructor>
     </constructors>
-    <methods/>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="satan" type-java="satan" name="satan" value="new satan()" value-java=" new satan()" enable="true"/>
+                <call expression="addObject(satan,495,404)" expression-java="addObject(satan, 495, 404)" enable="true"/>
+            </body>
+        </method>
+    </methods>
 </class>

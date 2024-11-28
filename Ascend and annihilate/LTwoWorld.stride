@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="LTwoWorld" extends="World" enable="true" strideversion="1">
+<class name="LTwoWorld" extends="World" extends-java="World" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -12,9 +12,24 @@
             <javadoc xml:space="preserve">Constructor for objects of class LTwoWorld.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
-            <body/>
+            <delegate target="super" params="1252,698,1" params-java="1252, 698, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
         </constructor>
     </constructors>
-    <methods/>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Player3" type-java="Player3" name="player3" value="new Player3()" value-java=" new Player3()" enable="true"/>
+                <call expression="addObject(player3,159,626)" expression-java="addObject(player3, 159, 626)" enable="true"/>
+                <variable type="Elevator2To3" type-java="Elevator2To3" name="elevator2To3" value="new Elevator2To3()" value-java=" new Elevator2To3()" enable="true"/>
+                <call expression="addObject(elevator2To3,930,345)" expression-java="addObject(elevator2To3, 930, 345)" enable="true"/>
+            </body>
+        </method>
+    </methods>
 </class>

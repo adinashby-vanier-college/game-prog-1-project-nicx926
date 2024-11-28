@@ -14,6 +14,6 @@ public class LThreeWorld extends World
      */
     public LThreeWorld()
     {
-        super(600, 400, 1);
+        super(1286, 842, 1);
     }
 }

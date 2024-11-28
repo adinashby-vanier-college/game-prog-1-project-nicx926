@@ -14,6 +14,17 @@ public class BossWorld extends World
      */
     public BossWorld()
     {
-        super(600, 400, 1);
+        super(1036, 848, 1);
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        satan satan =  new  satan();
+        addObject(satan, 495, 404);
     }
 }

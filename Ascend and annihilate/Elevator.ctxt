@@ -7,4 +7,6 @@ comment1.text=\r\n\ constructor\ for\ rotating\ and\ for\ scaling\ down\ the\ im
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Elevator\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=3
+comment3.params=nextWorld
+comment3.target=void\ levelTransition(greenfoot.World)
+numComments=4
