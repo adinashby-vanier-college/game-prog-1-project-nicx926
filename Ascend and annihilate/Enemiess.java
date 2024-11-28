@@ -9,6 +9,8 @@ public class Enemiess extends Characters
 {
     public int shotsFired = 0;
     public int maxShots = 5;
+    protected int accuracyRange;
+    public int survivorRotation;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -28,9 +30,11 @@ public class Enemiess extends Characters
     {
         Playerss target = (Playerss) getWorld().getObjects(Playerss.class).get(0);
         if (target != null && canShoot()){
-            Bullet bullet = new Bullet();
+            Bullet bullet = new Bullet(survivorRotation);
             getWorld().addObject(bullet,getX(),getY());
-            bullet.setRotation(getRotation());
+            
+            int randomAngle = Greenfoot.getRandomNumber(accuracyRange * 2) - accuracyRange;
+            bullet.setRotation(getRotation() + randomAngle);
             shotsFired++;
         }
     }
@@ -124,7 +128,7 @@ public class Enemiess extends Characters
         int reloadTime = 100;
         int burstShotsLeft = 3;
         if (shootCooldown == 0) {
-            Bullet bullet =  new  Bullet();
+            Bullet bullet =  new  Bullet(survivorRotation);
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());
             shootCooldown = 50;

@@ -265,6 +265,38 @@
                 <call expression="addObject(enemyWhitePistol3,624,575)" expression-java="addObject(enemyWhitePistol3, 624, 575)" enable="true"/>
                 <variable type="EnemyBluPistol" type-java="EnemyBluPistol" name="enemyBluPistol3" value="new EnemyBluPistol()" value-java=" new EnemyBluPistol()" enable="true"/>
                 <call expression="addObject(enemyBluPistol3,512,589)" expression-java="addObject(enemyBluPistol3, 512, 589)" enable="true"/>
+                <variable type="EnemyBluRifle" type-java="EnemyBluRifle" name="enemyBluRifle" value="new EnemyBluRifle()" value-java=" new EnemyBluRifle()" enable="true"/>
+                <call expression="addObject(enemyBluRifle,160,650)" expression-java="addObject(enemyBluRifle, 160, 650)" enable="true"/>
+                <call expression="enemyBluPistol.setLocation(142,377)" expression-java="enemyBluPistol.setLocation(142, 377)" enable="true"/>
+                <call expression="removeObject(enemyBluPistol)" expression-java="removeObject(enemyBluPistol)" enable="true"/>
+                <call expression="enemyWhitePistol2.setLocation(244,720)" expression-java="enemyWhitePistol2.setLocation(244, 720)" enable="true"/>
+                <call expression="removeObject(enemyWhitePistol2)" expression-java="removeObject(enemyWhitePistol2)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(559,389)" expression-java="enemyBluPistol2.setLocation(559, 389)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(559,389)" expression-java="enemyBluPistol2.setLocation(559, 389)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(559,389)" expression-java="enemyBluPistol2.setLocation(559, 389)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(563,393)" expression-java="enemyBluPistol2.setLocation(563, 393)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(563,393)" expression-java="enemyBluPistol2.setLocation(563, 393)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(563,393)" expression-java="enemyBluPistol2.setLocation(563, 393)" enable="true"/>
+                <call expression="enemyBluPistol2.setLocation(563,391)" expression-java="enemyBluPistol2.setLocation(563, 391)" enable="true"/>
+                <call expression="removeObject(enemyBluPistol2)" expression-java="removeObject(enemyBluPistol2)" enable="true"/>
+                <call expression="enemyBluPistol3.setLocation(514,584)" expression-java="enemyBluPistol3.setLocation(514, 584)" enable="true"/>
+                <call expression="removeObject(enemyBluPistol3)" expression-java="removeObject(enemyBluPistol3)" enable="true"/>
+                <call expression="enemyWhitePistol3.setLocation(618,578)" expression-java="enemyWhitePistol3.setLocation(618, 578)" enable="true"/>
+                <call expression="enemyWhitePistol3.setLocation(618,578)" expression-java="enemyWhitePistol3.setLocation(618, 578)" enable="true"/>
+                <call expression="removeObject(enemyWhitePistol3)" expression-java="removeObject(enemyWhitePistol3)" enable="true"/>
+                <variable type="Player2" type-java="Player2" name="player2" value="new Player2()" value-java=" new Player2()" enable="true"/>
+                <call expression="addObject(player2,132,221)" expression-java="addObject(player2, 132, 221)" enable="true"/>
+                <call expression="player1.setLocation(125,129)" expression-java="player1.setLocation(125, 129)" enable="true"/>
+                <call expression="player1.setLocation(125,129)" expression-java="player1.setLocation(125, 129)" enable="true"/>
+                <call expression="player1.setLocation(134,145)" expression-java="player1.setLocation(134, 145)" enable="true"/>
+                <call expression="removeObject(player1)" expression-java="removeObject(player1)" enable="true"/>
+                <variable type="Player4" type-java="Player4" name="player4" value="new Player4()" value-java=" new Player4()" enable="true"/>
+                <call expression="addObject(player4,145,165)" expression-java="addObject(player4, 145, 165)" enable="true"/>
+                <call expression="player2.setLocation(138,207)" expression-java="player2.setLocation(138, 207)" enable="true"/>
+                <call expression="player2.setLocation(131,217)" expression-java="player2.setLocation(131, 217)" enable="true"/>
+                <call expression="removeObject(player2)" expression-java="removeObject(player2)" enable="true"/>
+                <variable type="satan" type-java="satan" name="satan" value="new satan()" value-java=" new satan()" enable="true"/>
+                <call expression="addObject(satan,300,676)" expression-java="addObject(satan, 300, 676)" enable="true"/>
             </body>
         </method>
     </methods>

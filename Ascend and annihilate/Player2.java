@@ -10,6 +10,7 @@ public class Player2 extends Playerss
     private int ammoCount = 6;  // 6 shots available initially
     private boolean reloading = false;  // Flag to check if it's reloading
     private long reloadStartTime;  // Stores the time when reloading starts
+    public int survivorRotation;
     /**
      * Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -39,8 +40,7 @@ public class Player2 extends Playerss
     private void fireShot()
     {
         ammoCount--;
-        getWorld().addObject(new Bullet(), getX(), getY());  // Adds a bullet to the world at the player2's position
-        System.out.println("Shot fired! Ammo left: " + ammoCount);
+        getWorld().addObject(new Bullet(survivorRotation), getX(), getY());  // Adds a bullet to the world at the player2's position      
     }
 
     // Starts the reloading process

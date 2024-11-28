@@ -20,9 +20,20 @@ public class EnemyBluPistol extends Enemiess
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
+        die();
     }
     public EnemyBluPistol()
     {
         maxShots = 3;
+        accuracyRange = 30;
+    }
+    public void die()
+    {
+        Actor bullet = getOneIntersectingObject(Bullet.class);
+        if(bullet !=null)
+        {
+            getWorld().removeObject(bullet);
+            getWorld().removeObject(this);
+        }
     }
 }
