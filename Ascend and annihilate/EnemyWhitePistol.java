@@ -19,14 +19,16 @@ public class EnemyWhitePistol extends Enemiess
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
-        die();
+        
     }
-    public void die()
+    /**public void die()
     {   Actor bullet = getOneIntersectingObject(Bullet.class);
-          if(bullet !=null)
+          if(bullet !=null){
+            Bullet bullet = (Bullet) bulletActo
         {
             getWorld().removeObject(bullet);
             getWorld().removeObject(this);
         }
-    }
+    **/
 }
+

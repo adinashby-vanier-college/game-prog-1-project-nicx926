@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,7 +7,7 @@ import greenfoot.*;
  */
 public class Playerss extends Characters
 {
-
+    private int health = 3;
     /**
      * Act - do whatever the Playerss wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -16,6 +15,7 @@ public class Playerss extends Characters
     {
         look();
         move();
+        checkIfHit();
     }
 
     /**
@@ -59,4 +59,23 @@ public class Playerss extends Characters
             turnTowards(mouse.getX(), mouse.getY());
         }
     }
-}
+    public void checkIfHit()
+    {
+        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
+        if (bullet != null) {
+            health--; // Reduce health
+            getWorld().removeObject(bullet); // Remove the bullet
+
+            if (health <= 0) {
+                die();
+            }
+        }
+    }
+    public void die()
+    {
+        Greenfoot.setWorld(new GameOverWorld()); // Transition to GameOverWorld
+        getWorld().removeObject(this); // Remove the player from the world
+        
+    }
+    }
+

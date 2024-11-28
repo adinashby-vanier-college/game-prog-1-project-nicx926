@@ -11,6 +11,9 @@ public class Enemiess extends Characters
     public int maxShots = 5;
     protected int accuracyRange;
     public int survivorRotation;
+    int shootCooldown = 0;
+    int reloadTime = 100;
+    int burstShotsLeft = 3;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -21,7 +24,6 @@ public class Enemiess extends Characters
         lookForPlayers();
         manageCooldown();
         shootAtPlayer();
-        CheckIfDead();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
@@ -41,17 +43,6 @@ public class Enemiess extends Characters
     public boolean canShoot()
     {
         return true;
-    }
-    public void CheckIfDead()
-    {
-        if (shotsFired >= maxShots){
-            die();
-        }
-    }
-    public void die()
-    {
-        getWorld().removeObject(this);
-        getWorld().addObject(new deadPlayer(),getX(),getY());
     }
     /**
      * 
@@ -103,11 +94,14 @@ public class Enemiess extends Characters
      */
     public void lookForPlayers()
     {
-        Playerss Player1 = (Playerss)getWorld().getObjects(Playerss.class).get(0);
-        if (Player1 != null && withinRange(Player1, 200)) {
-            turnTowards(Player1.getX(), Player1.getY());
+        List<Playerss> players = getWorld().getObjects(Playerss.class);
+        if (!players.isEmpty()) {
+        Playerss target = players.get(0); // Assume single player
+        if (withinRange(target, 200)) {
+            turnTowards(target.getX(), target.getY());
             shootBullet();
         }
+    }
     }
 
     /**
@@ -124,45 +118,34 @@ public class Enemiess extends Characters
      */
     public void shootBullet()
     {
-        int shootCooldown = 0;
-        int reloadTime = 100;
-        int burstShotsLeft = 3;
-        if (shootCooldown == 0) {
-            Bullet bullet =  new  Bullet(survivorRotation);
+        if (shootCooldown == 0 && burstShotsLeft > 0) {
+            Bullet bullet =  new  Bullet(false);
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());
             shootCooldown = 50;
             burstShotsLeft = burstShotsLeft - 1;
         }
-        else {
-            if (burstShotsLeft == 0) {
-                reloadTime = 100;
-                burstShotsLeft = 3;
-            }
+        if (burstShotsLeft == 0 && reloadTime == 0){
+            reloadTime = 100;
+            burstShotsLeft = 3;
         }
     }
-
     /**
      * 
      */
     public void manageCooldown()
     {
-        int shootCooldown = 0;
-        int reloadTime = 100;
-        int burstShotsLeft = 3;
         if (shootCooldown > 0) {
             shootCooldown = shootCooldown - 1;
         }
         if (reloadTime > 0) {
             reloadTime = reloadTime - 1;
         }
-        else {
-            if (reloadTime == 0 && burstShotsLeft == 0) {
-                burstShotsLeft = 3;
-            }
+        else if (burstShotsLeft == 0){
+            reloadTime = 100;
+            burstShotsLeft = 3;
         }
     }
-
     /**
      * 
      */
