@@ -28,6 +28,7 @@ public class EnemyWhitePistol extends Enemiess
         if(bullet !=null)
         {
             getWorld().removeObject(bullet);
+            getWorld().addObject( new  deadWorker(), getX(), getY());
             getWorld().removeObject(this);
         }
     }

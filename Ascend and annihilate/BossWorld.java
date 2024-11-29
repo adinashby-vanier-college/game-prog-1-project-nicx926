@@ -24,7 +24,9 @@ public class BossWorld extends World
      */
     private void prepare()
     {
-        satan satan =  new satan();
+        satan satan =  new  satan();
         addObject(satan, 495, 404);
+        Player4 player4 =  new  Player4();
+        addObject(player4, 227, 491);
     }
 }

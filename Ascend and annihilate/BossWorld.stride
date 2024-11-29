@@ -27,6 +27,8 @@ That is: create the initial objects and add them to the world.</javadoc>
             <body>
                 <variable type="satan" type-java="satan" name="satan" value="new satan()" value-java=" new satan()" enable="true"/>
                 <call expression="addObject(satan,495,404)" expression-java="addObject(satan, 495, 404)" enable="true"/>
+                <variable type="Player4" type-java="Player4" name="player4" value="new Player4()" value-java=" new Player4()" enable="true"/>
+                <call expression="addObject(player4,227,491)" expression-java="addObject(player4, 227, 491)" enable="true"/>
             </body>
         </method>
     </methods>

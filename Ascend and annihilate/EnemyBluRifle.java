@@ -33,6 +33,7 @@ public class EnemyBluRifle extends Enemiess
         if(bullet !=null)
         {
             getWorld().removeObject(bullet);
+            getWorld().addObject( new  deadSecurity(), getX(), getY());
             getWorld().removeObject(this);
         }
     }

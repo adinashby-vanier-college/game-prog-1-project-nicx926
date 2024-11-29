@@ -533,5 +533,21 @@ public class LOneWorld extends World
         wall53.setLocation(560,617);
         satan.setLocation(305,672);
         removeObject(satan);
+        enemyBluRifle.setLocation(157,652);
+        EnemyBluPistol enemyBluPistol4 = new EnemyBluPistol();
+        addObject(enemyBluPistol4,164,616);
+        removeObject(enemyBluRifle);
+        enemyBluPistol4.setLocation(163,646);
+        EnemyWhitePistol enemyWhitePistol4 = new EnemyWhitePistol();
+        addObject(enemyWhitePistol4,559,388);
+        EnemyBluPistol enemyBluPistol5 = new EnemyBluPistol();
+        addObject(enemyBluPistol5,480,704);
+        EnemyBluPistol enemyBluPistol6 = new EnemyBluPistol();
+        addObject(enemyBluPistol6,706,589);
+        EnemyWhitePistol enemyWhitePistol5 = new EnemyWhitePistol();
+        addObject(enemyWhitePistol5,309,706);
+        Elevator1To2 elevator1To2 = new Elevator1To2();
+        addObject(elevator1To2,284,206);
+        removeObject(elevator1To2);
     }
 }
