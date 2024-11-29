@@ -24,9 +24,13 @@ public class LTwoWorld extends World
      */
     private void prepare()
     {
-        Player3 player3 =  new Player3();
+        Player3 player3 =  new  Player3();
         addObject(player3, 159, 626);
-        Elevator2To3 elevator2To3 =  new Elevator2To3();
+        Elevator2To3 elevator2To3 =  new  Elevator2To3();
         addObject(elevator2To3, 930, 345);
+        elevator2To3.setLocation(924, 346);
+        removeObject(elevator2To3);
+        Elevator2To3 elevator2To32 =  new  Elevator2To3();
+        addObject(elevator2To32, 893, 438);
     }
 }

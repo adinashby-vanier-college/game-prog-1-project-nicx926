@@ -13,6 +13,6 @@ public class Elevator3ToBoss extends Elevator
      */
     public void act()
     {
-        levelTransition(new BossWorld());
+        super.act();
     }
 }

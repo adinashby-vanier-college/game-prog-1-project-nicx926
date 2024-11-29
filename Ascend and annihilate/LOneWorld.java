@@ -531,5 +531,7 @@ public class LOneWorld extends World
         addObject(wall53,555,619);
         wall53.setLocation(538,615);
         wall53.setLocation(560,617);
+        satan.setLocation(305,672);
+        removeObject(satan);
     }
 }

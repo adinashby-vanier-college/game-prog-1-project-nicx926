@@ -29,6 +29,10 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="addObject(player3,159,626)" expression-java="addObject(player3, 159, 626)" enable="true"/>
                 <variable type="Elevator2To3" type-java="Elevator2To3" name="elevator2To3" value="new Elevator2To3()" value-java=" new Elevator2To3()" enable="true"/>
                 <call expression="addObject(elevator2To3,930,345)" expression-java="addObject(elevator2To3, 930, 345)" enable="true"/>
+                <call expression="elevator2To3.setLocation(924,346)" expression-java="elevator2To3.setLocation(924, 346)" enable="true"/>
+                <call expression="removeObject(elevator2To3)" expression-java="removeObject(elevator2To3)" enable="true"/>
+                <variable type="Elevator2To3" type-java="Elevator2To3" name="elevator2To32" value="new Elevator2To3()" value-java=" new Elevator2To3()" enable="true"/>
+                <call expression="addObject(elevator2To32,893,438)" expression-java="addObject(elevator2To32, 893, 438)" enable="true"/>
             </body>
         </method>
     </methods>
