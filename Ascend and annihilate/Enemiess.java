@@ -7,8 +7,6 @@ import greenfoot.*;
  */
 public class Enemiess extends Characters
 {
-    public int shotsFired = 0;
-    public int maxShots = 5;
     protected int accuracyRange;
     public int survivorRotation;
     int shootCooldown = 0;
@@ -37,28 +35,9 @@ public class Enemiess extends Characters
     {
         move();
         moveAround();
-        lookForPlayers();
-        manageCooldown();
-        shootAtPlayer();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
-    }
-    public void shootAtPlayer()
-    {
-        Playerss target = (Playerss) getWorld().getObjects(Playerss.class).get(0);
-        if (target != null && canShoot()){
-            Bullet bullet = new Bullet(survivorRotation);
-            getWorld().addObject(bullet,getX(),getY());
-            
-            int randomAngle = Greenfoot.getRandomNumber(accuracyRange * 2) - accuracyRange;
-            bullet.setRotation(getRotation() + randomAngle);
-            shotsFired++;
-        }
-    }
-    public boolean canShoot()
-    {
-        return true;
     }
     /**
      * 
@@ -92,7 +71,6 @@ public class Enemiess extends Characters
             turn(180);
         }
     }
-
     /**
      * 
      */
@@ -104,64 +82,6 @@ public class Enemiess extends Characters
         }
         if (isAtEdge()) {
             turn(180);
-        }
-    }
-
-    /**
-     * 
-     */
-    public void lookForPlayers()
-    {
-        List<Playerss> players = getWorld().getObjects(Playerss.class);
-        if (!players.isEmpty()) {
-        Playerss target = players.get(0); // Assume single player
-        if (withinRange(target, 100)) {
-            turnTowards(target.getX(), target.getY());
-            shootBullet();
-        }
-    }
-    }
-
-    /**
-     * 
-     */
-    public boolean withinRange(Playerss player, int range)
-    {
-        int distance = (int)Math.hypot(getX() - player.getX(), getY() - player.getY());
-        return distance <= range;
-    }
-
-    /**
-     * 
-     */
-    public void shootBullet()
-    {
-        if (shootCooldown == 0 && burstShotsLeft > 0) {
-            Bullet bullet =  new  Bullet(false);
-            getWorld().addObject(bullet, getX(), getY());
-            bullet.setRotation(getRotation());
-            shootCooldown = 50;
-            burstShotsLeft = burstShotsLeft - 1;
-        }
-        if (burstShotsLeft == 0 && reloadTime == 0){
-            reloadTime = 100;
-            burstShotsLeft = 3;
-        }
-    }
-    /**
-     * 
-     */
-    public void manageCooldown()
-    {
-        if (shootCooldown > 0) {
-            shootCooldown = shootCooldown - 1;
-        }
-        if (reloadTime > 0) {
-            reloadTime = reloadTime - 1;
-        }
-        else if (burstShotsLeft == 0){
-            reloadTime = 100;
-            burstShotsLeft = 3;
         }
     }
     /**
@@ -177,7 +97,6 @@ public class Enemiess extends Characters
             return false;
         }
     }
-
     /**
      * 
      */

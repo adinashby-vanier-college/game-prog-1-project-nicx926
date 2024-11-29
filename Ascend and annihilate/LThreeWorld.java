@@ -216,5 +216,12 @@ public class LThreeWorld extends World
         addObject(player32,140,272);
         Elevator3ToBoss elevator3ToBoss2 = new Elevator3ToBoss();
         addObject(elevator3ToBoss2,792,547);
+        Player4 player4 = new Player4();
+        addObject(player4,128,190);
+        removeObject(player32);
+        removeObject(player4);
+        addObject(player4,50,455);
+        EnemyBluPistol enemyBluPistol = new EnemyBluPistol();
+        addObject(enemyBluPistol,479,474);
     }
 }

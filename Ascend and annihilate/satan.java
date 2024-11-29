@@ -22,7 +22,7 @@ public class satan extends Actor
      */
     public void moveAround()
     {
-        move(1);
+        move(3);
        
         // Randomly turn with a 1 in 10 chance
         if (Greenfoot.getRandomNumber(10) == 1) {
@@ -43,7 +43,7 @@ public class satan extends Actor
         fireballTimer++;  // Increment the timer each frame
 
         // Shoot a fireball at a fixed interval (every 100 frames for example)
-        if (fireballTimer % 100 == 0) {
+        if (fireballTimer % 220 == 0) {
             Fireball fireball = new Fireball();  // Create a new fireball object
             getWorld().addObject(fireball, getX(), getY());  // Add it to the world at the satan's current location
             fireball.setRotation(getRotation());  // Fire in the current direction
@@ -55,27 +55,31 @@ public class satan extends Actor
      */
     public void shootRayTowardsPlayer()
     {
-        rayTimer++;  // Increment the ray timer each frame
+    rayTimer++;  // Increment the ray timer each frame
 
-        // Shoot a ray every 200 frames (for example)
-        if (rayTimer % 200 == 0) {
-            // Find the player (Player 4) object
-            Player4 player = (Player4) getWorld().getObjects(Player4.class).get(0);
+    // Shoot a ray every 150 frames (for example)
+    if (rayTimer % 120 == 0) {
+        // Find the player (Player 4) object
+        Player4 player = (Player4) getWorld().getObjects(Player4.class).get(0);
 
-            if (player != null) {
-                // Calculate the angle between satan and player
-                int deltaX = player.getX() - getX();
-                int deltaY = player.getY() - getY();
-                double angle = Math.toDegrees(Math.atan2(deltaY, deltaX));  // Angle between satan and player
+        if (player != null) {
+            // Calculate the angle between satan and player
+            int deltaX = player.getX() - getX();
+            int deltaY = player.getY() - getY();
+            double angle = Math.toDegrees(Math.atan2(deltaY, deltaX));  // Angle between satan and player
 
-                // Shoot the ray towards the player
-                Ray ray = new Ray();
-                getWorld().addObject(ray, getX(), getY());  // Add ray at the boss's position
-                ray.setRotation((int) angle);  // Set the direction of the ray
-            }
+            // Add uncertainty (random offset) to the angle, within a range of ±15 degrees
+            int uncertainty = Greenfoot.getRandomNumber(20) - 15;  // Random value between -15 and 15
+            angle += uncertainty;
 
-            // Reset the ray timer to control the frequency
-            rayTimer = 0;
+            // Shoot the ray towards the player with the new angle
+            Ray ray = new Ray();
+            getWorld().addObject(ray, getX(), getY());  // Add ray at the boss's position
+            ray.setRotation((int) angle);  // Set the direction of the ray with uncertainty
         }
+
+        // Reset the ray timer to control the frequency
+        rayTimer = 0;
     }
+    }   
 }

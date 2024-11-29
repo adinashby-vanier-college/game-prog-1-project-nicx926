@@ -243,5 +243,17 @@ public class LTwoWorld extends World
         Elevator2To3 elevator2To3 = new Elevator2To3();
         addObject(elevator2To3,1169,375);
         elevator2To3.setLocation(1186,373);
+        removeObject(player2);
+        Player3 player3 = new Player3();
+        addObject(player3,144,571);
+        removeObject(enemyBluRifle3);
+        removeObject(enemyWhitePistol);
+        removeObject(enemyWhiteRifle);
+        removeObject(enemyWhiteRifle2);
+        removeObject(enemyBluRifle2);
+        removeObject(enemyBluRifle4);
+        EnemyBluPistol enemyBluPistol = new EnemyBluPistol();
+        addObject(enemyBluPistol,266,134);
+        removeObject(enemyBluRifle);
     }
 }

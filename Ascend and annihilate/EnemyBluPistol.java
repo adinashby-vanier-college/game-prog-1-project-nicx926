@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class EnemyBluPistol extends Enemiess
 {
-    
+    private int hitCounter = 0; 
     /**
      * Act - do whatever the EnemyBluPistol wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -15,8 +15,6 @@ public class EnemyBluPistol extends Enemiess
     {
         move();
         moveAround();
-        lookForPlayers();
-        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
@@ -24,17 +22,20 @@ public class EnemyBluPistol extends Enemiess
     }
     public EnemyBluPistol()
     {
-        maxShots = 3;
         accuracyRange = 30;
     }
     public void die()
     {
         Actor bullet = getOneIntersectingObject(Bullet.class);
-        if(bullet !=null)
-        {
-            getWorld().removeObject(bullet);
-            getWorld().addObject( new  deadSecurity(), getX(), getY());
+        if(bullet !=null){
+        hitCounter++;
+        getWorld().removeObject(bullet);
+        if(hitCounter>=2)
+        {  
+            deadSecurity deadSecurity = new deadSecurity();
+            getWorld().addObject(deadSecurity, getX(), getY());
             getWorld().removeObject(this);
+        }
         }
     }
 }
