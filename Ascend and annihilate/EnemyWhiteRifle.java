@@ -14,7 +14,6 @@ public class EnemyWhiteRifle extends Enemiess
     public void act()
     {
         moveAround();
-        move();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }

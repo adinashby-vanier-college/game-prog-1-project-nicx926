@@ -2,49 +2,59 @@ import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class Player2 extends Playerss
 {
     public int survivorRotation;
-    private int ammoCount;  // 6 shots available initially
-    private int maxAmmo;// Flag to check if it's reloading
+    private int ammoCount;
+    private int maxAmmo;
     private int reloadCooldown;
-    private int reloadTimer;  // Stores the time when reloading starts
-    
+    private int reloadTimer;
+    private boolean isShooting; // To track mouse button state
+
     public Player2()
     {
         maxAmmo = 6;
         ammoCount = maxAmmo;
         reloadCooldown = 100;
-        reloadTimer = 5;
+        reloadTimer = 0;
+        isShooting = false; // Initially not shooting
     }
-    /**
-     * Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act()
     {
         look();
         move();
         shoot();
         reload();
+        displayAmmo();
         survivorRotation = getRotation();
     }
+
     public void shoot()
     {
-        if(ammoCount > 0 && reloadTimer == 0){
-            if(Greenfoot.getMouseInfo() != null && Greenfoot.getMouseInfo().getButton()==1)
-            {
-                Bullet bullet = new Bullet (survivorRotation);
-                getWorld().addObject(bullet,getX(),getY());
+    if (ammoCount > 0 && reloadTimer == 0) {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null) {
+            if (mouse.getButton() == 1 && !isShooting) {
+                Bullet bullet = new Bullet(survivorRotation);
+                getWorld().addObject(bullet, getX(), getY());
                 ammoCount--;
                 Greenfoot.playSound("pistol.mp3");
+                isShooting = true; // Prevent shooting again until button is released
+            }
+        } else {
+            // Reset shooting flag when the button is released
+            isShooting = false;
+        }
+
+        // Allow shooting again once the mouse button is released
+        if (mouse == null || mouse.getButton() != 1) {
+            isShooting = false;
             }
         }
     }
 
-    // Starts the reloading process
+
     public void reload()
     {
         if (ammoCount == 0 && reloadTimer == 0) {
@@ -52,22 +62,19 @@ public class Player2 extends Playerss
             Greenfoot.playSound("reload.mp3");
         }
 
-        // Manage reload timer
         if (reloadTimer > 0) {
             reloadTimer--;
             if (reloadTimer == 0) {
-                ammoCount = maxAmmo; // Reset ammo after reload
+                ammoCount = maxAmmo;
             }
         }
     }
 
-    // Completes the reload and refills the ammo
     public void displayAmmo()
     {
-        getWorld().showText("Ammo: " + ammoCount + "/" + maxAmmo, 100, 50); // Display ammo count
+        getWorld().showText("Ammo: " + ammoCount + "/" + maxAmmo, 100, 50);
         if (reloadTimer > 0) {
-            getWorld().showText("Reloading...", 100, 70); // Show reloading message
+            getWorld().showText("Reloading...", 100, 70);
         }
     }
 }
-

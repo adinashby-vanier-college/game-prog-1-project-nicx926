@@ -13,7 +13,6 @@ public class EnemyWhiteShotgun extends Enemiess
      */
     public void act()
     {
-        move();
         moveAround();
         if (isGameOver()) {
             transitionToGameOverWorld();

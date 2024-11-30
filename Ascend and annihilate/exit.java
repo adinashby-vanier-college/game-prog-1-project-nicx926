@@ -5,9 +5,9 @@ import greenfoot.*;
 /**
  * 
  */
-public class Exit extends Elevator
+public class exit extends Elevator
 {
-    public Exit(){
+    public exit(){
         GreenfootImage image = getImage();
         // Define your scaling factor (e.g., 1.5 means 150% of the original size)
         double scaleFactor = 0.29;

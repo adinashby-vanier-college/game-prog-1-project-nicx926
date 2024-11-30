@@ -13,11 +13,16 @@ public class EnemyBluShotgun extends Enemiess
      */
     public void act()
     {
-        move();
         moveAround();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
+        die();
+    }
+    public EnemyBluShotgun()
+    {
+        accuracyRange = 10;
+        
     }
     public void die(){
         Actor bullet = getOneIntersectingObject(Bullet.class);
@@ -27,8 +32,8 @@ public class EnemyBluShotgun extends Enemiess
         if(hitCounter>=2)
         {
             deadSecurity deadSecurity = new deadSecurity();
+            getWorld().addObject(deadSecurity, getX(), getY());
             getWorld().removeObject(this);
-            getWorld().addObject( new  deadSecurity(), getX(), getY());
         }
     }
 }

@@ -77,21 +77,25 @@ public class Playerss extends Characters
     }
     public void checkIfHit()
     {
-        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
-        if (bullet != null) {
-            health--; // Reduce health
-            getWorld().removeObject(bullet); // Remove the bullet
-
-            if (health <= 0) {
+        EnemyBullet enemyBullet = (EnemyBullet) getOneIntersectingObject(EnemyBullet.class);
+        if (enemyBullet != null) {
+            takeDamage(); // Reduce health
+            getWorld().removeObject(enemyBullet); // Remove the bullet
+        }
+    }
+    public void takeDamage()
+    {
+        health--;
+        if (health <= 0) {
                 die();
             }
-        }
     }
     public void die()
     {
         Greenfoot.setWorld(new GameOverWorld()); // Transition to GameOverWorld
+        deadPlayer deadPlayer = new deadPlayer();
+        getWorld().addObject(deadPlayer,getX(),getY());
         getWorld().removeObject(this); // Remove the player from the world
-        
     }
     }
 

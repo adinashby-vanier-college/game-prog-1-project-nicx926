@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=EnemyBullet
-comment0.text=\r\n\ \r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ EnemyBullet\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\n\ Represents\ a\ bullet\ fired\ by\ the\ enemy.\n
+comment1.params=rotationAngle
+comment1.target=EnemyBullet(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ EnemyBullet\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=3

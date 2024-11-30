@@ -13,7 +13,6 @@ public class EnemyWhitePistol extends Enemiess
      */
     public void act()
     {
-        move();
         moveAround();
         if (isGameOver()) {
             transitionToGameOverWorld();
@@ -33,8 +32,8 @@ public class EnemyWhitePistol extends Enemiess
         if(hitCounter>=2)
         {
             deadWorker deadWorker = new deadWorker();
-            getWorld().removeObject(this);
             getWorld().addObject(deadWorker, getX(), getY());
+            getWorld().removeObject(this);
         }
         }
     }

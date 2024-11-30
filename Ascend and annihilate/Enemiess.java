@@ -8,11 +8,10 @@ import greenfoot.*;
 public class Enemiess extends Characters
 {
     protected int accuracyRange;
-    public int survivorRotation;
-    int shootCooldown = 0;
-    int reloadTime = 100;
-    int burstShotsLeft = 3;
-    
+    private int shootCooldown = 0; 
+    private int cooldownTime;
+    private int shootingRange;
+    private boolean canShoot = true;
     public Enemiess(){
         GreenfootImage image = getImage();
         // Define your scaling factor (e.g., 1.5 means 150% of the original size)

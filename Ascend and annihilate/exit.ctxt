@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=Exit
-comment0.text=\r\n\ \r\n
+comment0.target=exit
+comment0.text=\n\ \n
 comment1.params=
-comment1.target=Exit()
+comment1.target=exit()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ exit\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ exit\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 numComments=3

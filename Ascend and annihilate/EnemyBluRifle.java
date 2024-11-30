@@ -13,7 +13,6 @@ public class EnemyBluRifle extends Enemiess
      */
     public void act()
     {
-        move();
         moveAround();
         if (isGameOver()) {
             transitionToGameOverWorld();
@@ -23,6 +22,7 @@ public class EnemyBluRifle extends Enemiess
     public EnemyBluRifle()
     {
         accuracyRange = 5;
+
     }
     public void die()
     {
@@ -34,7 +34,7 @@ public class EnemyBluRifle extends Enemiess
         {
             deadSecurity deadSecurity = new deadSecurity();
             getWorld().removeObject(this);
-            getWorld().addObject( new  deadSecurity(), getX(), getY());
+            getWorld().addObject(deadSecurity, getX(), getY());
         }
     }
 }
