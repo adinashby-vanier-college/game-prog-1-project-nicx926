@@ -15,12 +15,20 @@ public class EnemyWhiteSmg extends Enemiess
     {
         move();
         moveAround();
-        lookForPlayerAndShoot();
+        if (canSeePlayer()) { // Check line of sight before shooting
+            lookForPlayerAndShoot();
+        }
         manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
         die();
+    }
+    public EnemyWhiteSmg()
+    {
+        this.accuracyRange = 10;
+        this.cooldownTime = 20;
+        this.shootingRange = 200;
     }
     
     public void die()
@@ -32,8 +40,8 @@ public class EnemyWhiteSmg extends Enemiess
         if(hitCounter>=1)
         {
             deadWorker deadWorker = new deadWorker();
+            getWorld().addObject(deadWorker, getX(), getY());
             getWorld().removeObject(this);
-            getWorld().addObject( new  deadWorker(), getX(), getY());
         }
     }
 }

@@ -37,8 +37,8 @@ public class EnemyBluRifle extends Enemiess
         if(hitCounter>=2)
         {
             deadSecurity deadSecurity = new deadSecurity();
-            getWorld().removeObject(this);
             getWorld().addObject(deadSecurity, getX(), getY());
-        }
+            getWorld().removeObject(this);
+        }   
     }
 }

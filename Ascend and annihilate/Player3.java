@@ -29,6 +29,7 @@ public class Player3 extends Playerss
         shoot();
         reload();
         displayAmmo();
+        displayHealth();
         survivorRotation = getRotation();
     }
     public void shoot()

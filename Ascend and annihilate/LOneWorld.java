@@ -26,8 +26,6 @@ public class LOneWorld extends World
         EnemyBluPistol enemyBluPistol =  new  EnemyBluPistol();
         addObject(enemyBluPistol, 296, 412);
         enemyBluPistol.setLocation(143, 377);
-        Player1 player1 =  new  Player1();
-        addObject(player1, 127, 136);
         EnemyWhitePistol enemyWhitePistol =  new  EnemyWhitePistol();
         addObject(enemyWhitePistol, 345, 371);
         EnemyWhitePistol enemyWhitePistol2 =  new  EnemyWhitePistol();
@@ -59,10 +57,6 @@ public class LOneWorld extends World
         removeObject(enemyWhitePistol3);
         Player2 player2 =  new  Player2();
         addObject(player2, 132, 221);
-        player1.setLocation(125, 129);
-        player1.setLocation(125, 129);
-        player1.setLocation(134, 145);
-        removeObject(player1);
         Player4 player4 =  new  Player4();
         addObject(player4, 145, 165);
         player2.setLocation(138, 207);

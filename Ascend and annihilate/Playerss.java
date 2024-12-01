@@ -31,6 +31,7 @@ public class Playerss extends Characters
     {
         look();
         move();
+        displayHealth();
         checkIfHit();
     }
 
@@ -89,6 +90,10 @@ public class Playerss extends Characters
         if (health <= 0) {
                 die();
             }
+    }
+    public void displayHealth()
+    {
+        getWorld().showText("Health: " + health, 100, 30);
     }
     public void die()
     {

@@ -27,9 +27,9 @@ public class Player2 extends Playerss
         shoot();
         reload();
         displayAmmo();
+        displayHealth();
         survivorRotation = getRotation();
     }
-
     public void shoot()
     {
     if (ammoCount > 0 && reloadTimer == 0) {
@@ -53,8 +53,6 @@ public class Player2 extends Playerss
             }
         }
     }
-
-
     public void reload()
     {
         if (ammoCount == 0 && reloadTimer == 0) {
