@@ -15,7 +15,9 @@ public class EnemyWhiteRifle extends Enemiess
     {
         move();
         moveAround();
-        lookForPlayerAndShoot();
+        if (canSeePlayer()) { // Check line of sight before shooting
+            lookForPlayerAndShoot();
+        }
         manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
