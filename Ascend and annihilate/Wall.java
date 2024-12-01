@@ -14,7 +14,7 @@ public class Wall extends Actor
     // Method to set the wall size dynamically
     public void setWallSize(String orientation, int length) {
         GreenfootImage image = getImage(); // Retrieve the current image
-        int wallThickness = 6; // thickness for walls
+        int wallThickness = 10; // thickness for walls
         
         if (orientation.equalsIgnoreCase("horizontal")) {
             image.scale(length, wallThickness); // Scale width to length, height to thickness

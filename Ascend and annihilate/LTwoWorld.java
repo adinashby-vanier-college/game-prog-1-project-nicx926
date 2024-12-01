@@ -312,5 +312,8 @@ public class LTwoWorld extends World
         enemyWhiteSmg2.setLocation(766,138);
         enemyWhiteSmg2.setLocation(746,98);
         enemyBluSmg12.setLocation(88,79);
+        exit exit = new exit();
+        addObject(exit,282,594);
+        exit.setLocation(155,629);
     }
 }

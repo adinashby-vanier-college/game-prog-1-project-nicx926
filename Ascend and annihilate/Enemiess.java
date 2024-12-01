@@ -55,7 +55,7 @@ public class Enemiess extends Characters {
     }
 
     public void transitionToGameOverWorld() {
-        World GameOverWorld = new GameOverWorld();
+        World GameOverWorld = new GameOverWorld(getWorld());
         Greenfoot.setWorld(GameOverWorld);
     }
 

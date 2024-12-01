@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Elevator
-comment0.text=\n\n
+comment0.text=\r\n\r\n
 comment1.params=
 comment1.target=Elevator()
-comment1.text=\n\ constructor\ for\ rotating\ and\ for\ scaling\ down\ the\ image\n
+comment1.text=\r\n\ constructor\ for\ rotating\ and\ for\ scaling\ down\ the\ image\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ Elevator\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Elevator\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=player
 comment3.target=greenfoot.World\ getNextWorld(Playerss)
 comment4.params=nextWorld

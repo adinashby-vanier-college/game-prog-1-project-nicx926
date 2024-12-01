@@ -32,26 +32,26 @@ public class Player2 extends Playerss
     }
     public void shoot()
     {
-    if (ammoCount > 0 && reloadTimer == 0) {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if (mouse != null) {
-            if (mouse.getButton() == 1 && !isShooting) {
-                Bullet bullet = new Bullet(survivorRotation);
-                getWorld().addObject(bullet, getX(), getY());
-                ammoCount--;
-                Greenfoot.playSound("pistol.mp3");
-                isShooting = true; // Prevent shooting again until button is released
+        if (ammoCount > 0 && reloadTimer == 0) {
+            MouseInfo mouse = Greenfoot.getMouseInfo();
+            if (mouse != null) {
+                if (mouse.getButton() == 1 && !isShooting) {
+                    Bullet bullet = new Bullet(survivorRotation);
+                    getWorld().addObject(bullet, getX(), getY());
+                    ammoCount--;
+                    Greenfoot.playSound("pistol.mp3");
+                    isShooting = true; // Prevent shooting again until button is released
+                }
+            } else {
+                // Reset shooting flag when the button is released
+                isShooting = false;
             }
-        } else {
-            // Reset shooting flag when the button is released
-            isShooting = false;
-        }
-
-        // Allow shooting again once the mouse button is released
-        if (mouse == null || mouse.getButton() != 1) {
-            isShooting = false;
+    
+            // Allow shooting again once the mouse button is released
+            if (mouse == null || mouse.getButton() != 1) {
+                isShooting = false;
+                }
             }
-        }
     }
     public void reload()
     {

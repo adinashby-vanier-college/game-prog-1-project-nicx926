@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,14 +7,16 @@ import greenfoot.*;
  */
 public class GameOverWorld extends World
 {
-
+    private World currentLevel;
     /**
      * Constructor for objects of class GameOverWorld.
      */
-    public GameOverWorld()
+    public GameOverWorld(World currentLevel)
     {
         super(800, 600, 1);
         showTextWithBigBlackFont("GAME OVER!", 250, 250);
+        PlayAgainButton playAgain = new PlayAgainButton(currentLevel);
+        addObject(playAgain, getWidth() / 2, getHeight() / 2 + 50);
     }
 
     /**
@@ -24,7 +25,7 @@ public class GameOverWorld extends World
     public void showTextWithBigBlackFont(String message, int x, int y)
     {
         GreenfootImage bg = getBackground();
-        Font font =  new Font(50);
+        Font font =  new  Font(50);
         bg.setFont(font);
         bg.setColor(Color.RED);
         bg.drawString(message, x, y);

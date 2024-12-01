@@ -39,8 +39,8 @@ public class EnemyWhiteRifle extends Enemiess
         if(hitCounter>=1)
         {
             deadWorker deadWorker = new deadWorker();
+            getWorld().addObject(deadWorker, getX(), getY());
             getWorld().removeObject(this);
-            getWorld().addObject( new  deadWorker(), getX(), getY());
         }
     }
 }

@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=Wall
-comment0.text=\n\ \n
+comment0.text=\r\n\ \r\n
 comment1.params=orientation\ length
 comment1.target=Wall(java.lang.String,\ int)
 comment2.params=orientation\ length
 comment2.target=void\ setWallSize(java.lang.String,\ int)
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\n\ Act\ -\ do\ whatever\ the\ Wall\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Wall\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=4

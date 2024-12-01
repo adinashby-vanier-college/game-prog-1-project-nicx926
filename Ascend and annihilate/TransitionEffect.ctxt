@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=TransitionEffect
-comment0.text=\n\ this\ actor\ is\ in\ charge\ of\ the\ fading\ in\ and\ fading\ out\ between\ levels\n
+comment0.text=\r\n\ this\ actor\ is\ in\ charge\ of\ the\ fading\ in\ and\ fading\ out\ between\ levels\r\n
 comment1.params=width\ height\ nextWorld
 comment1.target=TransitionEffect(int,\ int,\ greenfoot.World)
-comment1.text=\n\ \n
+comment1.text=\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ TransitionActor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ TransitionActor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=3
