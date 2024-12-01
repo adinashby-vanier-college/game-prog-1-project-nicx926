@@ -5,7 +5,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class EnemyBluShotgun extends Enemiess
+public class EnemyBluSmg extends Enemiess
 {
     private int hitCounter = 0;
     /**
@@ -13,16 +13,20 @@ public class EnemyBluShotgun extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
         die();
     }
-    public EnemyBluShotgun()
+    public EnemyBluSmg()
     {
-        accuracyRange = 10;
-        
+        this.accuracyRange = 10;
+        this.cooldownTime = 20;
+        this.shootingRange = 200;
     }
     public void die(){
         Actor bullet = getOneIntersectingObject(Bullet.class);

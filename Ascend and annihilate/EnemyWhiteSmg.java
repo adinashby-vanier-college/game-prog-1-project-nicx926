@@ -5,7 +5,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class EnemyWhiteShotgun extends Enemiess
+public class EnemyWhiteSmg extends Enemiess
 {
     private int hitCounter = 0;
     /**
@@ -13,12 +13,16 @@ public class EnemyWhiteShotgun extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
         die();
     }
+    
     public void die()
     {
         Actor bullet = getOneIntersectingObject(Bullet.class);

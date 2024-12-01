@@ -13,7 +13,10 @@ public class EnemyWhitePistol extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
@@ -21,7 +24,9 @@ public class EnemyWhitePistol extends Enemiess
     }
     public EnemyWhitePistol()
     {
-        accuracyRange = 30;
+        this.accuracyRange = 30;
+        this.cooldownTime = 60;
+        this.shootingRange = 200;
     }
     public void die()
     {

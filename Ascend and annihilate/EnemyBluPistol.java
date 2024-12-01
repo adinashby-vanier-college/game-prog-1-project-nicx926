@@ -15,6 +15,8 @@ public class EnemyBluPistol extends Enemiess
     {
         move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
@@ -22,7 +24,9 @@ public class EnemyBluPistol extends Enemiess
     }
     public EnemyBluPistol()
     {
-        accuracyRange = 30;
+        this.accuracyRange = 30;
+        this.cooldownTime = 60;
+        this.shootingRange = 200;
     }
     public void die()
     {

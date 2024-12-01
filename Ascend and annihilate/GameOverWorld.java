@@ -15,7 +15,7 @@ public class GameOverWorld extends World
     public GameOverWorld()
     {
         super(800, 600, 1);
-        showTextWithBigBlackFont("GAME OVER!", 180, 200);
+        showTextWithBigBlackFont("GAME OVER!", 250, 250);
     }
 
     /**
@@ -24,7 +24,7 @@ public class GameOverWorld extends World
     public void showTextWithBigBlackFont(String message, int x, int y)
     {
         GreenfootImage bg = getBackground();
-        Font font =  new Font(50);
+        Font font =  new  Font(50);
         bg.setFont(font);
         bg.setColor(Color.RED);
         bg.drawString(message, x, y);

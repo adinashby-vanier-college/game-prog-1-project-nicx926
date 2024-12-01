@@ -13,11 +13,20 @@ public class EnemyWhiteRifle extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
         die();
+    }
+    public EnemyWhiteRifle()
+    {   
+        this.accuracyRange = 5;
+        this.cooldownTime = 30; 
+        this.shootingRange = 400;
     }
     public void die()
     {

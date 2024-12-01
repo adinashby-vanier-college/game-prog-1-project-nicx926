@@ -14,7 +14,7 @@
             <throws/>
             <delegate target="super" params="800,600,1" params-java="800, 600, 1"/>
             <body>
-                <call expression="showTextWithBigBlackFont(&quot;GAME OVER!&quot;,180,200)" expression-java="showTextWithBigBlackFont(&quot;GAME OVER!&quot;, 180, 200)" enable="true"/>
+                <call expression="showTextWithBigBlackFont(&quot;GAME OVER!&quot;,250,250)" expression-java="showTextWithBigBlackFont(&quot;GAME OVER!&quot;, 250, 250)" enable="true"/>
             </body>
         </constructor>
     </constructors>

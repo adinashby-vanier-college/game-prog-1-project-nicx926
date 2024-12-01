@@ -13,7 +13,10 @@ public class EnemyBluRifle extends Enemiess
      */
     public void act()
     {
+        move();
         moveAround();
+        lookForPlayerAndShoot();
+        manageCooldown();
         if (isGameOver()) {
             transitionToGameOverWorld();
         }
@@ -21,8 +24,9 @@ public class EnemyBluRifle extends Enemiess
     }
     public EnemyBluRifle()
     {
-        accuracyRange = 5;
-
+        this.accuracyRange = 5;
+        this.cooldownTime = 30; 
+        this.shootingRange = 400;
     }
     public void die()
     {

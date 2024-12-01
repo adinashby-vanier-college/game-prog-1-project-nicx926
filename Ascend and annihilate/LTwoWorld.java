@@ -255,5 +255,36 @@ public class LTwoWorld extends World
         EnemyBluPistol enemyBluPistol = new EnemyBluPistol();
         addObject(enemyBluPistol,266,134);
         removeObject(enemyBluRifle);
+        enemyBluPistol.setLocation(268,128);
+        removeObject(enemyBluPistol);
+        EnemyBluSmg enemyBluSmg = new EnemyBluSmg();
+        addObject(enemyBluSmg,426,533);
+        EnemyBluSmg enemyBluSmg2 = new EnemyBluSmg();
+        addObject(enemyBluSmg2,281,545);
+        enemyBluSmg.setLocation(479,510);
+        enemyBluSmg2.setLocation(280,548);
+        EnemyBluSmg enemyBluSmg3 = new EnemyBluSmg();
+        addObject(enemyBluSmg3,77,238);
+        EnemyBluSmg enemyBluSmg4 = new EnemyBluSmg();
+        addObject(enemyBluSmg4,493,221);
+        EnemyBluSmg enemyBluSmg5 = new EnemyBluSmg();
+        addObject(enemyBluSmg5,414,341);
+        EnemyBluSmg enemyBluSmg6 = new EnemyBluSmg();
+        addObject(enemyBluSmg6,478,95);
+        enemyBluSmg2.setLocation(285,544);
+        enemyBluSmg2.setLocation(289,515);
+        removeObject(enemyBluSmg2);
+        EnemyBluSmg enemyBluSmg12 = new EnemyBluSmg();
+        addObject(enemyBluSmg12,76,77);
+        EnemyBluSmg enemyBluSmg7 = new EnemyBluSmg();
+        addObject(enemyBluSmg7,744,484);
+        EnemyBluSmg enemyBluSmg8 = new EnemyBluSmg();
+        addObject(enemyBluSmg8,1015,486);
+        EnemyBluSmg enemyBluSmg9 = new EnemyBluSmg();
+        addObject(enemyBluSmg9,1019,98);
+        EnemyBluSmg enemyBluSmg10 = new EnemyBluSmg();
+        addObject(enemyBluSmg10,728,92);
+        EnemyBluSmg enemyBluSmg11 = new EnemyBluSmg();
+        addObject(enemyBluSmg11,883,280);
     }
 }
