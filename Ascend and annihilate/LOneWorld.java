@@ -62,8 +62,6 @@ public class LOneWorld extends World
         player2.setLocation(138, 207);
         player2.setLocation(131, 217);
         removeObject(player2);
-        satan satan =  new  satan();
-        addObject(satan, 300, 676);
         Wall wall = new Wall("horizontal", 400);
         addObject(wall,408,730);
         wall.setLocation(426,729);
@@ -525,8 +523,6 @@ public class LOneWorld extends World
         addObject(wall53,555,619);
         wall53.setLocation(538,615);
         wall53.setLocation(560,617);
-        satan.setLocation(305,672);
-        removeObject(satan);
         enemyBluRifle.setLocation(157,652);
         EnemyBluPistol enemyBluPistol4 = new EnemyBluPistol();
         addObject(enemyBluPistol4,164,616);
@@ -592,5 +588,11 @@ public class LOneWorld extends World
         addObject(table3,148,718);
         table3 table32 = new table3();
         addObject(table32,552,717);
+        boz boz = new boz();
+        addObject(boz,494,487);
+        sink sink = new sink();
+        addObject(sink,265,597);
+        printer printer3 = new printer();
+        addObject(printer3,492,519);
     }
 }

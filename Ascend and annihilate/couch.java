@@ -14,5 +14,6 @@ public class couch extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }

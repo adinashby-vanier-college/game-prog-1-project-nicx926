@@ -14,5 +14,6 @@ public class printer extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }

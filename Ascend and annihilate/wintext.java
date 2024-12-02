@@ -6,14 +6,13 @@ import greenfoot.*;
 /**
  * 
  */
-public class dresser extends decorations
+public class wintext extends Actor
 {
 
     /**
-     * Act - do whatever the dresser wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the wintext wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        removeBullet();
     }
 }

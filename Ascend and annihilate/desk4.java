@@ -14,5 +14,6 @@ public class desk4 extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }

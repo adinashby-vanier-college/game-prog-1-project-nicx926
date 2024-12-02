@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -24,11 +23,12 @@ public class BossWorld extends World
      */
     private void prepare()
     {
-        satan satan =  new satan();
-        addObject(satan, 495, 404);
-        Player4 player4 =  new Player4();
+        Player4 player4 =  new  Player4();
         addObject(player4, 227, 491);
-        EnemyBluPistol enemyBluPistol =  new EnemyBluPistol();
+        EnemyBluPistol enemyBluPistol =  new  EnemyBluPistol();
         addObject(enemyBluPistol, 479, 233);
+        removeObject(enemyBluPistol);
+        Satan satan = new Satan();
+        addObject(satan, 300, 200);
     }
 }

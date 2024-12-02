@@ -13,7 +13,7 @@ public class GameOverWorld extends World
      */
     public GameOverWorld(World currentLevel)
     {
-        super(800, 600, 1);
+        super(770, 640, 1);
         showTextWithBigBlackFont("GAME OVER!", 250, 250);
         PlayAgainButton playAgain = new PlayAgainButton(currentLevel);
         addObject(playAgain, getWidth() / 2, getHeight() / 2 + 50);

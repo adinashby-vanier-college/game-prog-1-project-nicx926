@@ -14,5 +14,6 @@ public class table2 extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }

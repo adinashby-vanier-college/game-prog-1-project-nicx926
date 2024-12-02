@@ -18,4 +18,5 @@ public class Ray extends Actor
             getWorld().removeObject(this);  // Remove ray if it hits the edge
         }
     }
+    
 }

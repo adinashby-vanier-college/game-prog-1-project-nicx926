@@ -14,5 +14,6 @@ public class circletable extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }

@@ -1,4 +1,4 @@
-import lang.stride.*;
+ import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
 
@@ -17,6 +17,6 @@ public class toilet extends decorations
      */
     public void act()
     {
-        
+        removeBullet();
     }
 }

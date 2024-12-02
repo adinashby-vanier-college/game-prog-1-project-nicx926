@@ -14,5 +14,6 @@ public class sink extends decorations
      */
     public void act()
     {
+        removeBullet();
     }
 }
