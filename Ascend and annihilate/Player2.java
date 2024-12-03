@@ -9,15 +9,19 @@ public class Player2 extends Playerss
     private int maxAmmo;
     private int reloadCooldown;
     private int reloadTimer;
+    private int shootCooldown; // Cooldown period for shooting
+    private int shootTimer; // Timer to track shooting interval
     private boolean isShooting; // To track mouse button state
 
     public Player2()
     {
-        super(8);
+        super(3);
         maxAmmo = 6;
         ammoCount = maxAmmo;
         reloadCooldown = 100;
         reloadTimer = 0;
+        shootCooldown = 12; // 0.2 seconds at 60 fps
+        shootTimer = 0; // Start with no cooldown
         isShooting = false; // Initially not shooting
     }
 
@@ -30,10 +34,14 @@ public class Player2 extends Playerss
         displayAmmo();
         displayHealth();
         survivorRotation = getRotation();
+        if (shootTimer > 0) {
+            shootTimer--; // Decrease the shoot timer if active
+        }
     }
+
     public void shoot()
     {
-        if (ammoCount > 0 && reloadTimer == 0) {
+        if (ammoCount > 0 && reloadTimer == 0 && shootTimer == 0) {
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if (mouse != null) {
                 if (mouse.getButton() == 1 && !isShooting) {
@@ -41,19 +49,20 @@ public class Player2 extends Playerss
                     getWorld().addObject(bullet, getX(), getY());
                     ammoCount--;
                     Greenfoot.playSound("pistol.mp3");
-                    isShooting = true; // Prevent shooting again until button is released
+                    isShooting = true; // Prevent continuous shooting while holding the button
+                    shootTimer = shootCooldown; // Set the cooldown timer
                 }
             } else {
-                // Reset shooting flag when the button is released
                 isShooting = false;
             }
-    
-            // Allow shooting again once the mouse button is released
+
+            // Reset shooting flag when the mouse button is released
             if (mouse == null || mouse.getButton() != 1) {
                 isShooting = false;
-                }
             }
+        }
     }
+
     public void reload()
     {
         if (ammoCount == 0 && reloadTimer == 0) {
