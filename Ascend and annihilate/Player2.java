@@ -13,6 +13,7 @@ public class Player2 extends Playerss
 
     public Player2()
     {
+        super(8);
         maxAmmo = 6;
         ammoCount = maxAmmo;
         reloadCooldown = 100;

@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Playerss
 comment0.text=\r\n\ \r\n
-comment1.params=
-comment1.target=Playerss()
+comment1.params=initialHealth
+comment1.target=Playerss(int)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Playerss\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
@@ -15,11 +15,10 @@ comment5.params=
 comment5.target=void\ look()
 comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ Player\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment6.params=
-comment6.target=void\ checkIfHit()
+comment6.target=void\ takeDamage()
+comment6.text=public\ void\ checkIfHit()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ EnemyBullet\ enemyBullet\ \=\ (EnemyBullet)\ getOneIntersectingObject(EnemyBullet.class);\r\n\ \ \ \ \ \ \ \ if\ (enemyBullet\ \!\=\ null)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ takeDamage();\ //\ Reduce\ health\r\n\ \ \ \ \ \ \ \ \ \ \ \ getWorld().removeObject(enemyBullet);\ //\ Remove\ the\ bullet\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ //\ Check\ for\ collisions\ with\ fireballs\r\n\ \ \ \ \ \ \ \ Fireball\ fireBall\ \=\ (Fireball)\ getOneIntersectingObject(Fireball.class);\r\n\ \ \ \ \ \ \ \ if\ (fireBall\ \!\=\ null)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ takeDamage();\r\n\ \ \ \ \ \ \ \ \ \ \ \ getWorld().removeObject(fireBall);\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Hit\ by\ Fireball\!");\r\n\ \ \ \ \ \ \ \ }\r\n}*
 comment7.params=
-comment7.target=void\ takeDamage()
+comment7.target=void\ displayHealth()
 comment8.params=
-comment8.target=void\ displayHealth()
-comment9.params=
-comment9.target=void\ die()
-numComments=10
+comment8.target=void\ die()
+numComments=9

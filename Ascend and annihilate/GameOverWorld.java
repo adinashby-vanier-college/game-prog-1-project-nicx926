@@ -8,6 +8,7 @@ import greenfoot.*;
 public class GameOverWorld extends World
 {
     private World currentLevel;
+
     /**
      * Constructor for objects of class GameOverWorld.
      */

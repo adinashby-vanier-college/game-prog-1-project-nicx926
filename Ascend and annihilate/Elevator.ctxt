@@ -1,18 +1,22 @@
 #BlueJ class context
 comment0.target=Elevator
-comment0.text=\r\n\r\n
+comment0.text=\r\n\ Elevator\ class\ for\ transitioning\ between\ levels.\r\n
 comment1.params=
 comment1.target=Elevator()
-comment1.text=\r\n\ constructor\ for\ rotating\ and\ for\ scaling\ down\ the\ image\r\n
+comment1.text=\r\n\ Constructor\ for\ scaling\ and\ rotating\ the\ image.\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Elevator\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ Act\ method\ for\ elevator\ behavior.\r\n
 comment3.params=player
 comment3.target=greenfoot.World\ getNextWorld(Playerss)
+comment3.text=\r\n\ Determines\ the\ next\ world\ based\ on\ the\ player\ type.\r\n
 comment4.params=nextWorld
 comment4.target=void\ levelTransition(greenfoot.World)
+comment4.text=\r\n\ Handles\ level\ transition\ with\ music\ stopping\ and\ new\ world\ initialization.\r\n
 comment5.params=
 comment5.target=void\ displaySuccessMessage()
+comment5.text=\r\n\ Displays\ the\ "Level\ Cleared"\ message.\r\n
 comment6.params=
 comment6.target=boolean\ areEnemiesRemaining()
+comment6.text=\r\n\ Checks\ if\ any\ enemies\ are\ remaining\ in\ the\ level.\r\n
 numComments=7

@@ -14,8 +14,20 @@ public class Fireball extends Actor
     public void act()
     {
         move(5);  // Move the fireball forward
-        if (isAtEdge()) {
+        checkCollision();
+        /**if (isAtEdge()) {
             getWorld().removeObject(this);  // Remove fireball if it hits the edge
+        }**/
+    }
+    
+    private void checkCollision()
+    {
+        if (isAtEdge()) {
+            getWorld().removeObject(this);
+        } else if (isTouching(Playerss.class)) {
+            Playerss player = (Playerss) getOneIntersectingObject(Playerss.class);
+            player.takeDamage(); // Implement `takeDamage` in `Playerss`
+            getWorld().removeObject(this);
         }
     }
 }   

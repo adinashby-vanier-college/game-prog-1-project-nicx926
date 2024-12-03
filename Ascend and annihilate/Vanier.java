@@ -17,7 +17,9 @@ public class Vanier extends World {
         if (fadeTimer >= 2) {
             applyFadeEffect();
         } else {
-            Greenfoot.setWorld(new StartScreen());
+            World StartScreen =  new  StartScreen();
+            StartScreen.started();
+            Greenfoot.setWorld(StartScreen);
         }
     }
 

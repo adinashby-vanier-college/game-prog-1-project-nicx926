@@ -7,16 +7,27 @@ import greenfoot.*;
  */
 public class LOneWorld extends World
 {
-
+    private GreenfootSound gameMusic;
     /**
      * Constructor for objects of class LOneWorld.
      */
     public LOneWorld()
     {
         super(830, 800, 1);
+        gameMusic =  new  GreenfootSound("lvl1.mp3");
         prepare();
     }
+    
+    public void started()
+    {
+        gameMusic.playLoop();
+    }
 
+    public void stopped()
+    {
+        gameMusic.stop();
+    }
+    
     /**
      * 
      */

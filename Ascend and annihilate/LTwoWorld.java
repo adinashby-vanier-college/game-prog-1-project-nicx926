@@ -7,14 +7,25 @@ import greenfoot.*;
  */
 public class LTwoWorld extends World
 {
-
+    private GreenfootSound gameMusic;
     /**
      * Constructor for objects of class LTwoWorld.
      */
     public LTwoWorld()
     {
         super(1252, 698, 1);
+        gameMusic =  new  GreenfootSound("lvl2.mp3");
         prepare();
+    }
+    
+    public void started()
+    {
+        gameMusic.playLoop();
+    }
+
+    public void stopped()
+    {
+        gameMusic.stop();
     }
 
     /**

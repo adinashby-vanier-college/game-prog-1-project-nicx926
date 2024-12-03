@@ -14,6 +14,7 @@ public class Player3 extends Playerss
     private int reloadTimer;
     public Player3()
     {
+        super(20);
         maxAmmo = 20;
         ammoCount = maxAmmo; // Start with full ammo
         reloadCooldown = 100; // Reload time in frames

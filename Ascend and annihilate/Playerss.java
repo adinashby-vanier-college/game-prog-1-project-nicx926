@@ -7,9 +7,9 @@ import greenfoot.*;
  */
 public class Playerss extends Characters
 {
-    private int health = 3;
+    protected int health;
     
-    public Playerss(){
+    public Playerss(int initialHealth){
         GreenfootImage image = getImage();
         // Define your scaling factor (e.g., 1.5 means 150% of the original size)
         double scaleFactor = 0.9;
@@ -23,6 +23,8 @@ public class Playerss extends Characters
         
         // Set the scaled image
         setImage(image);
+        
+        this.health = initialHealth;
     }
     /**
      * Act - do whatever the Playerss wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,7 +34,7 @@ public class Playerss extends Characters
         look();
         move();
         displayHealth();
-        checkIfHit();
+        //checkIfHit();
     }
 
     /**
@@ -118,14 +120,24 @@ public class Playerss extends Characters
             turnTowards(mouse.getX(), mouse.getY());
         }
     }
-    public void checkIfHit()
+    
+    /**public void checkIfHit()
     {
         EnemyBullet enemyBullet = (EnemyBullet) getOneIntersectingObject(EnemyBullet.class);
         if (enemyBullet != null) {
             takeDamage(); // Reduce health
             getWorld().removeObject(enemyBullet); // Remove the bullet
         }
-    }
+        
+         // Check for collisions with fireballs
+        Fireball fireBall = (Fireball) getOneIntersectingObject(Fireball.class);
+        if (fireBall != null) {
+            takeDamage();
+            getWorld().removeObject(fireBall);
+            System.out.println("Hit by Fireball!");
+        }
+    }**/
+    
     public void takeDamage()
     {
         health--;
@@ -139,10 +151,30 @@ public class Playerss extends Characters
     }
     public void die()
     {
-        Greenfoot.setWorld(new GameOverWorld(getWorld())); // Transition to GameOverWorld
+        // Get the current world
+        World currentWorld = getWorld();
+    
+        // Stop any currently playing music based on the current world's type
+        if (currentWorld instanceof LOneWorld) {
+            ((LOneWorld) currentWorld).stopped();
+        } else if (currentWorld instanceof LTwoWorld) {
+            ((LTwoWorld) currentWorld).stopped();
+        } else if (currentWorld instanceof LThreeWorld) {
+            ((LThreeWorld) currentWorld).stopped();
+        } else if (currentWorld instanceof BossWorld) {
+            ((BossWorld) currentWorld).stopped();
+        }
+    
+        // Transition to GameOverWorld
+        World gameOverWorld = new GameOverWorld(currentWorld);
+        Greenfoot.setWorld(gameOverWorld);
+    
+        // Add a "dead player" marker (optional visual effect)
         deadPlayer deadPlayer = new deadPlayer();
-        getWorld().addObject(deadPlayer,getX(),getY());
-        getWorld().removeObject(this); // Remove the player from the world
+        currentWorld.addObject(deadPlayer, getX(), getY());
+    
+        // Remove the player from the world
+        currentWorld.removeObject(this);
     }
-    }
+}
 

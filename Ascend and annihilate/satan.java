@@ -9,6 +9,7 @@ public class Satan extends Actor
     private int health = 100;  // Satan's health (200 hits)
     private int hitCount = 0;  // Count how many times Satan has been hit by bullets
     private GreenfootImage healthImage;  // Image to display health
+    private GreenfootSound gameMusic;
     
     public Satan() {
         healthImage = new GreenfootImage(200, 30);  // Create an image for health display
@@ -29,7 +30,12 @@ public class Satan extends Actor
         if (health <= 0) {
             World world = getWorld();
             if (world != null) {
-                Greenfoot.setWorld(new WinWorld());  // Switch to WinWorld when Satan dies
+                World BossWorld = getWorld();
+                BossWorld.stopped();
+                World WinWorld =  new WinWorld();
+                WinWorld.started();
+                Greenfoot.setWorld(WinWorld);  // Switch to WinWorld when Satan dies
+                //World crabWorld = getWorld();
             }
         }
         

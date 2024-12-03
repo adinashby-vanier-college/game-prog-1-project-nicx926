@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,14 +7,25 @@ import greenfoot.*;
  */
 public class WinWorld extends World
 {
-
+    private GreenfootSound gameMusic;
     /**
      * Constructor for objects of class WinWorld.
      */
     public WinWorld()
     {
         super(1010, 670, 1);
+        gameMusic =  new  GreenfootSound("happyend.mp3");
         prepare();
+    }
+    
+    public void started()
+    {
+        gameMusic.play();
+    }
+
+    public void stopped()
+    {
+        gameMusic.stop();
     }
 
     /**
@@ -24,7 +34,7 @@ public class WinWorld extends World
      */
     private void prepare()
     {
-        wintext wintext =  new wintext();
+        wintext wintext =  new  wintext();
         addObject(wintext, 510, 342);
         removeObject(wintext);
         addObject(wintext, 510, 339);

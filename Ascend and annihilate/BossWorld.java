@@ -7,16 +7,27 @@ import greenfoot.*;
  */
 public class BossWorld extends World
 {
-
+    private GreenfootSound gameMusic;
     /**
      * Constructor for objects of class BossWorld.
      */
     public BossWorld()
     {
         super(1036, 848, 1);
+        gameMusic =  new  GreenfootSound("Boss.mp3");
         prepare();
     }
 
+    public void started()
+    {
+        gameMusic.playLoop();
+    }
+
+    public void stopped()
+    {
+        gameMusic.stop();
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

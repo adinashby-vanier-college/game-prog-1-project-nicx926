@@ -14,9 +14,17 @@ public class Ray extends Actor
     public void act()
     {
         move(10);  // Move the ray forward
-        if (isAtEdge()) {
-            getWorld().removeObject(this);  // Remove ray if it hits the edge
-        }
+        checkCollision();
     }
     
+      private void checkCollision()
+    {
+        if (isAtEdge()) {
+            getWorld().removeObject(this);
+        } else if (isTouching(Playerss.class)) {
+            Playerss player = (Playerss) getOneIntersectingObject(Playerss.class);
+            player.takeDamage(); // Implement `takeDamage` in `Playerss`
+            getWorld().removeObject(this);
+        }
+    }
 }
